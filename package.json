@@ -1,5 +1,5 @@
 {
-  "name": "express_authentication",
+  "name": "news-times",
   "version": "1.0.0",
   "description": "Express authentication template using Passport + Flash messages + custom middleware",
   "main": "server.js",
@@ -32,7 +32,7 @@
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
-    "dotenv": "^16.0.2",
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "express-ejs-layouts": "^2.5.1",
