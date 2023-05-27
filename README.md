@@ -22,10 +22,18 @@ The News App utilizes the following APIs:
 
 - News API from Google: This API allows the app to retrieve news articles from various sources.
 
-## Wireframes & ERD (Entity-Relationship Diagram)
+## Wireframes
 Wireframes for the News App have been created to visualize the app's design and layout. The ERD (Entity-Relationship Diagram) for the News App can be found in the wireframes as well. 
 
-![newsWireframe](public/assets/img/newsWireframe.png)
+![newsWireframe](public/assets/img/wireframe.png)
+
+### Models 
+
+![models](public/assets/img/models.png)
+
+### Entity Relationship Diagram 
+
+![edr](public/assets/img/edr.png)
 
 ## Working App Images 
 

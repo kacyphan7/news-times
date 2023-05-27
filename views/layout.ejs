@@ -10,30 +10,115 @@
   <link rel="stylesheet" href="/css/style.css">
   <!-- web-fonts -->
   <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!-- Bulma Version 0.9.0-->
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
 </head>
 
 <body>
-  <%- include('partials/alerts') %>
+  <section class="hero is-info is-medium is-bold">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="../">
+              <img src="/assets/img/logo.png" alt="Logo" width="200px">
+            </a>
+            <span class="navbar-burger burger" data-target="navbarMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <div class="tabs is-right">
+                <ul>
+                  <li class="is-active"></li>
+                  <li><a href="">Home</a></li>
+                  <li><a href="">Business</a></li>
+                  <li><a href="">Apple</a></li>
+                  <li><a href="">Wall Street Journal</a></li>
+                  <li><a href="">TechCrunch</a></li>
+                </ul>
+                <%- include('partials/alerts') %>
+                <% if (!currentUser) {%>
+                <span class="navbar-item">
+                  <a class="button is-white is-outlined" href="/auth/signup">Signup</a>
+                  <a class="button is-white is-outlined" href="/auth/login">Login</a>
+                </span>
+                <% } else { %>
+                <a class="button is-white is-outlined" href="/auth/logout">Logout</a>
+                <a class="button is-white is-outlined" href="/profile">Profile</a>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <%- body %>
 
-  <% if (!currentUser) {%>
-  <li><a href="/auth/signup">Signup</a></li>
-  <li><a href="/auth/login">Login</a></li>
-  <% } else { %>
-  <li><a href="/auth/logout">Logout</a></li>
-  <li><a href="/profile">Profile</a></li>
-  <% } %>
-
-  <%- body %>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
-    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"></script>
+    <footer class="footer">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-3 is-offset-2">
+            <h2><strong>Menu</strong></h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Apple</a></li>
+              <li><a href="#">Wall Street Journal</a></li>
+              <li><a href="#">TechCrunch</a></li>
+            </ul>
+          </div>
+          <div class="column is-3">
+            <h2><strong>Category</strong></h2>
+            <ul>
+              <li><a href="#">Search</a></li>
+              <li><a href="#">Kanban airis sum eschelor</a></li>
+              <li><a href="#">Modular modern free</a></li>
+              <li><a href="#">The king of clubs</a></li>
+              <li><a href="#">The Discovery Dissipation</a></li>
+              <li><a href="#">Course Correction</a></li>
+              <li><a href="#">Better Angels</a></li>
+            </ul>
+          </div>
+          <div class="column is-4">
+            <h2><strong>Category</strong></h2>
+            <ul>
+              <li><a href="#">Objects in space</a></li>
+              <li><a href="#">Playing cards with coyote</a></li>
+              <li><a href="#">Goodbye Yellow Brick Road</a></li>
+              <li><a href="#">The Garden of Forking Paths</a></li>
+              <li><a href="#">Future Shock</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content has-text-centered">
+          <p>&copy; Copyright 2023- News Times . Design by: Kacy Phan </p>
+          <div class="control level-item">
+            <p>
+              <a class="icon" href="https://github.com/kacyphan7">
+                <i class="fa fa-github"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 </body>
 
 </html>

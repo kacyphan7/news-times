@@ -1,7 +1,9 @@
 require('dotenv').config();
 const express = require('express');
 const layouts = require('express-ejs-layouts');
+const axios = require('axios');
 const app = express();
+const ejsLayouts = require('express-ejs-layouts');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('./config/ppConfig');
@@ -11,7 +13,7 @@ const SECRET_SESSION = process.env.SECRET_SESSION;
 // console.log('>>>>>>>>', SECRET_SESSION);
 
 app.set('view engine', 'ejs');
-
+app.use(ejsLayouts);
 app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
@@ -36,7 +38,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.get('/', (req, res) => {
   res.render('index');
 });
@@ -54,4 +55,9 @@ const server = app.listen(PORT, () => {
   console.log(`📖 You're reading the latest news port ${PORT} 📖`);
 });
 
-module.exports = server;
+module.exports = {
+  server,
+  app,
+  PORT,
+  axios
+};
