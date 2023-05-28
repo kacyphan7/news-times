@@ -134,7 +134,7 @@ app.get('/wallStreet', function (req, res) {
 
 // All articles about Tesla from the last month, sorted by recent first
 app.get('/tesla', function (req, res) {
-  axios.get('https://newsapi.org/v2/everything?q=tesla&from=2023-04-27&sortBy=publishedAt&apiKey=' + apiKey)
+  axios.get('https://newsapi.org/v2/everything?q=tesla&from=2023-04-28&sortBy=publishedAt&apiKey=' + apiKey)
     .then(function (response) {
       // handle success
       if (response.status === 200) {
@@ -232,7 +232,6 @@ app.get('/bbc', function (req, res) {
     });
 });
 
-
 // Top headlines about Trump
 app.get('/trump', function (req, res) {
   axios.get('https://newsapi.org/v2/top-headlines?q=trump&apiKey=' + apiKey)
@@ -252,6 +251,16 @@ app.get('/trump', function (req, res) {
       res.json({ message: error.message });
     });
 });
+
+// Search page
+/* app.get('/search', (req, res) => {
+  const news = newsAPI.getEverything({
+    q: req.query.q,
+  });
+
+  res.render('search.ejs', { news });
+}); */
+
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
