@@ -5,8 +5,18 @@
             <!-- sidebar -->
             <div class="column is-3-desktop is-12-tablet">
                 <ul class="sidenav">
-                    <li title="apple" class="sidelist">
+                    <li title="Basic Startup" class="sidelist parent active">
                         <a href="/apple">Apple</a>
+                        <ul>
+                            <% for (let index = 0; index < articles.length; index++) { %>
+                            <% let article = articles[index]; %>
+                            <li class="sidelist">
+                                <a href="/apple/<%= encodeURIComponent(article.author) %>">
+                                    <%= article.author %>
+                                </a>
+                            </li>
+                            <% } %>
+                        </ul>
                     </li>
                     <li class="sidelist">
                         <a href="/business">Business</a>
@@ -41,7 +51,7 @@
             <!-- body -->
             <div class="column is-8-desktop is-12-tablet">
                 <div class="content mt-2">
-                    <h2 class="mb-4 has-text-weight-medium">All Articles Mentioning Apple </h2>
+                    <h2 class="mb-4 has-text-weight-medium">All Articles Mentioning Apple</h2>
                     <hr>
                     <% for (let i = 0; i < articles.length; i++) { %>
                     <% const article = articles[i]; %>
@@ -51,6 +61,9 @@
                             <div class="card-image">
                                 <img src="<%= article.urlToImage %>">
                             </div>
+                            <p class="card-text">
+                                <%= article.author %>
+                            </p>
                             <p class="card-text">
                                 <%= article.description %>
                             </p>

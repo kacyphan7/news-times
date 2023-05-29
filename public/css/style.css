@@ -208,3 +208,70 @@ footer li:before {
 .icon {
     color: white;
 }
+
+/* sidenav */
+.sidenav {
+    border-right: 1px solid #E2E2E2;
+    padding-right: 20px;
+    padding-left: 30px;
+}
+
+.sidenav ul {
+    padding-left: 10px;
+}
+
+.sidenav>li a {
+    padding: 20px 0;
+    color: #222;
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.sidenav>li:not(:last-child) {
+    border-bottom: 1px solid #E2E2E2;
+}
+
+.sidenav .sidelist ul {
+    display: none;
+}
+
+.sidenav .parent>a {
+    color: #1DB3F5 !important;
+    position: relative;
+    margin-left: 10px;
+}
+
+.sidenav .parent>a::before {
+    position: absolute;
+    content: "";
+    left: -10px;
+    top: 25%;
+    height: 50%;
+    width: 1px;
+    background: #1DB3F5;
+}
+
+.sidenav .parent ul {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sidenav .parent ul a {
+    padding: 5px 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #222;
+}
+
+.sidenav .parent ul li.active>a {
+    margin-left: 10px;
+}
+
+.sidenav .parent ul li.active>a::before {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    display: block;
+    top: 13px;
+}

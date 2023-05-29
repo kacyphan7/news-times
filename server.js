@@ -72,6 +72,34 @@ app.get('/apple', function (req, res) {
     });
 });
 
+
+// Get a single apple by author
+app.get('/apple/:author', function (req, res) {
+  const decodedAuthor = decodeURIComponent(req.params.author); // Decode the author parameter
+
+  axios.get('https://newsapi.org/v2/everything?q=apple&apiKey=' + apiKey)
+    .then(function (response) {
+      let found = false;
+
+      for (let i = 0; i < response.data.articles.length; i++) {
+        let article = response.data.articles[i];
+
+        if (article.author && article.author.toUpperCase() === decodedAuthor.toUpperCase()) {
+          res.render('single-apple', { article: article, articles: response.data.articles });
+          found = true;
+          break; // Exit the loop once the article is found
+        }
+      }
+
+      if (!found) {
+        res.render('apples', { message: 'Article does not exist.' });
+      }
+    })
+    .catch(function (error) {
+      res.render('apples', { message: 'Data not found. Please try again later.' });
+    });
+});
+
 // Top business headlines in the US right now
 app.get('/business', function (req, res) {
   axios.get('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=' + apiKey)
