@@ -1,1 +1,66 @@
-<h1>US</h1>
+</section>
+<section class="pt-5">
+    <div class="container shadow section-sm rounded">
+        <div class="columns is-multiline">
+            <!-- sidebar -->
+            <div class="column is-3-desktop is-12-tablet">
+                <ul class="sidenav">
+                    <li title="bitcoin" class="sidelist">
+                        <a href="/us">US News</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/apple">Apple</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/business">Business</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/techCrunch">TechCrunch</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/wallStreet">Wall Street Journal</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/tesla">Tesla</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/bitcoin">Bitcoin</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/trump">Trump</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/bbc">BBC News</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/sources">Sources</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- body -->
+            <div class="column is-8-desktop is-12-tablet">
+                <div class="content mt-2">
+                    <h2 class="mb-4 has-text-weight-medium">Top Headlines in the US</h2>
+                    <hr>
+                    <% for (let i = 0; i < us.length; i++) { %>
+                    <% const usNews = us[i]; %>
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title"><%= usNews.title %></h2>
+                            <div class="card-image">
+                                <img src="<%= usNews.urlToImage %>">
+                            </div>
+                            <p class="card-text">
+                                <%= usNews.description %>
+                            </p>
+                            <a href="<%= usNews.url %>" class="card-link">Read More</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

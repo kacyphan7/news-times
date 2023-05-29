@@ -58,7 +58,7 @@ app.get('/apple', function (req, res) {
     .then(function (response) {
       // handle success
       if (response.status === 200) {
-        res.render('apple', { apple: response.data });
+        res.render('apple', { articles: response.data.articles });
       } else if (response.status === 404) {
         res.json({ message: 'No articles found.' });
       } else if (response.status === 401) {
@@ -78,7 +78,8 @@ app.get('/business', function (req, res) {
     .then(function (response) {
       // handle success
       if (response.status === 200) {
-        res.render('business', { business: response.data });
+        let business = response.data.articles;
+        res.render('business', { business: business });
       } else if (response.status === 404) {
         res.json({ message: 'No articles found.' });
       } else if (response.status === 401) {
@@ -98,7 +99,8 @@ app.get('/techCrunch', function (req, res) {
     .then(function (response) {
       // handle success
       if (response.status === 200) {
-        res.render('techCrunch', { techCrunch: response.data });
+        let techCrunch = response.data.articles;
+        res.render('techCrunch', { techCrunch: techCrunch });
       } else if (response.status === 404) {
         res.json({ message: 'No articles found.' });
       } else if (response.status === 401) {
@@ -118,7 +120,8 @@ app.get('/wallStreet', function (req, res) {
     .then(function (response) {
       // handle success
       if (response.status === 200) {
-        res.render('wallStreet', { wallStreet: response.data });
+        let wallStreet = response.data.articles;
+        res.render('wallStreet', { wallStreet: wallStreet });
       } else if (response.status === 404) {
         res.json({ message: 'No articles found.' });
       } else if (response.status === 401) {
@@ -134,11 +137,12 @@ app.get('/wallStreet', function (req, res) {
 
 // All articles about Tesla from the last month, sorted by recent first
 app.get('/tesla', function (req, res) {
-  axios.get('https://newsapi.org/v2/everything?q=tesla&from=2023-04-28&sortBy=publishedAt&apiKey=' + apiKey)
+  axios.get('https://newsapi.org/v2/everything?q=tesla&apiKey=' + apiKey)
     .then(function (response) {
       // handle success
       if (response.status === 200) {
-        res.render('tesla', { tesla: response.data });
+        let tesla = response.data.articles;
+        res.render('tesla', { tesla: tesla });
       } else if (response.status === 404) {
         res.json({ message: 'No articles found.' });
       } else if (response.status === 401) {
@@ -158,7 +162,8 @@ app.get('/bitcoin', function (req, res) {
     .then(function (response) {
       // handle success
       if (response.status === 200) {
-        res.render('bitcoin', { bitcoin: response.data });
+        let bitcoin = response.data.articles;
+        res.render('bitcoin', { bitcoin: bitcoin });
       } else if (response.status === 404) {
         res.json({ message: 'No articles found.' });
       } else if (response.status === 401) {
@@ -176,11 +181,10 @@ app.get('/bitcoin', function (req, res) {
 app.get('/sources', function (req, res) {
   axios.get('https://newsapi.org/v2/top-headlines/sources?&apiKey=' + apiKey)
     .then(function (response) {
-      // handle success
       if (response.status === 200) {
-        res.render('sources', { sources: response.data });
+        res.render('sources', { sources: response.data.sources });
       } else if (response.status === 404) {
-        res.json({ message: 'No articles found.' });
+        res.json({ message: 'No sources found.' });
       } else if (response.status === 401) {
         res.json({ message: 'Invalid API key.' });
       } else if (response.status === 504) {
@@ -198,7 +202,8 @@ app.get('/us', function (req, res) {
     .then(function (response) {
       // handle success
       if (response.status === 200) {
-        res.render('us', { us: response.data });
+        let us = response.data.articles;
+        res.render('us', { us: us });
       } else if (response.status === 404) {
         res.json({ message: 'No articles found.' });
       } else if (response.status === 401) {
@@ -218,7 +223,8 @@ app.get('/bbc', function (req, res) {
     .then(function (response) {
       // handle success
       if (response.status === 200) {
-        res.render('bbc', { bbc: response.data });
+        let bbc = response.data.articles;
+        res.render('bbc', { bbc: bbc });
       } else if (response.status === 404) {
         res.json({ message: 'No articles found.' });
       } else if (response.status === 401) {
@@ -238,7 +244,8 @@ app.get('/trump', function (req, res) {
     .then(function (response) {
       // handle success
       if (response.status === 200) {
-        res.render('trump', { trump: response.data });
+        let trump = response.data.articles;
+        res.render('trump', { trump: trump });
       } else if (response.status === 404) {
         res.json({ message: 'No articles found.' });
       } else if (response.status === 401) {

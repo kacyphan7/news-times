@@ -1,1 +1,67 @@
-<h1>WALL STREET JOURNAL</h1>
+</section>
+<section class="pt-5">
+    <div class="container shadow section-sm rounded">
+        <div class="columns is-multiline">
+            <!-- sidebar -->
+            <div class="column is-3-desktop is-12-tablet">
+                <ul class="sidenav">
+                    <li title="wallStreet" class="sidelist">
+                        <a href="/wallStreet">Wall Street Journal</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/apple">Apple</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/business">Business</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/techCrunch">TechCrunch</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/tesla">Tesla</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/bitcoin">Bitcoin</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/trump">Trump</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/us">US News</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/bbc">BBC News</a>
+                    </li>
+                    <li class="sidelist">
+                        <a href="/sources">Sources</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- body -->
+            <div class="column is-8-desktop is-12-tablet">
+                <div class="content mt-2">
+                    <h2 class="mb-4 has-text-weight-medium">All articles published by the Wall Street Journal in the
+                        last 6 months</h2>
+                    <hr>
+                    <% for (let i = 0; i < wallStreet.length; i++) { %>
+                    <% const wallStreets = wallStreet[i]; %>
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title"><%= wallStreets.title %></h2>
+                            <div class="card-image">
+                                <img src="<%= wallStreets.urlToImage %>">
+                            </div>
+                            <p class="card-text">
+                                <%= wallStreets.description %>
+                            </p>
+                            <a href="<%= wallStreets.url %>" class="card-link">Read More</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
