@@ -315,6 +315,34 @@ app.get('/bitcoin', function (req, res) {
     });
 });
 
+// Get a single bitcoin by author
+app.get('/bitcoin/:author', function (req, res) {
+  const decodedAuthor = decodeURIComponent(req.params.author);
+
+  axios.get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=' + apiKey)
+    .then(function (response) {
+      let foundArticle = null;
+
+      for (let i = 0; i < response.data.articles.length; i++) {
+        let article = response.data.articles[i];
+
+        if (article.author && article.author.toUpperCase() === decodedAuthor.toUpperCase()) {
+          foundArticle = article;
+          break;
+        }
+      }
+
+      if (foundArticle) {
+        res.render('single-bitcoin', { article: foundArticle, articles: response.data.articles });
+      } else {
+        res.render('bitcoin', { message: 'Article does not exist.' });
+      }
+    })
+    .catch(function (error) {
+      res.render('bitcoin', { message: 'Data not found. Please try again later.' });
+    });
+});
+
 // All sources
 app.get('/sources', function (req, res) {
   axios.get('https://newsapi.org/v2/top-headlines/sources?&apiKey=' + apiKey)
