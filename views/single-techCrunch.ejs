@@ -1,0 +1,43 @@
+</section>
+<section class="pt-6">
+    <div class="container shadow section-sm rounded">
+        <div class="columns is-multiline">
+            <!-- sidebar -->
+            <div class="column is-3-desktop is-12-tablet">
+                <ul class="sidenav">
+                    <li title="Basic Startup" class="sidelist parent active">
+                        <a href="/techCrunch">TechCrunch</a>
+                        <ul>
+                            <% for (let index = 0; index < articles.length; index++) { %>
+                            <% let article = articles[index]; %>
+                            <li class="sidelist">
+                                <a href="/techCrunch/<%= article.author %>">
+                                    <%= article.author %>
+                                </a>
+                            </li>
+                            <% } %>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- body -->
+            <div class="column is-8-desktop is-12-tablet">
+                <div class="px-4">
+                    <h2 class="mb-4 has-text-weight-medium">Top headlines from TechCrunch right now</h2>
+                    <div class="content">
+                        <hr>
+                        <div>
+                            <h2><%= techCrunch.title %></h2>
+                            <h3><%= techCrunch.author %></h3>
+                            <p><img src="<%= techCrunch.urlToImage %>"></p>
+                            <p><strong>Published At:</strong> <%= techCrunch.publishedAt %></p>
+                            <p><strong>Description:</strong> <%= techCrunch.description %></p>
+                            <p><strong>Content:</strong> <%= techCrunch.content %></p>
+                            <a href="<%= techCrunch.url %>" class="card-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

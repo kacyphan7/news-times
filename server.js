@@ -169,6 +169,33 @@ app.get('/techCrunch', function (req, res) {
     });
 });
 
+// Get a single TechCrunch by author
+app.get('/techCrunch/:author', function (req, res) {
+  const decodedAuthor = decodeURIComponent(req.params.author);
+
+  axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=' + apiKey)
+    .then(function (response) {
+      let found = false;
+
+      for (let i = 0; i < response.data.articles.length; i++) {
+        let article = response.data.articles[i];
+
+        if (article.author && article.author.toUpperCase() === decodedAuthor.toUpperCase()) {
+          res.render('single-techCrunch', { techCrunch: article, articles: response.data.articles });
+          found = true;
+          break;
+        }
+      }
+
+      if (!found) {
+        res.render('techCrunch', { message: 'Article does not exist.' });
+      }
+    })
+    .catch(function (error) {
+      res.render('techCrunch', { message: 'Data not found. Please try again later.' });
+    });
+});
+
 // All articles published by the Wall Street Journal in the last 6 months, sorted by recent first
 app.get('/wallStreet', function (req, res) {
   axios.get('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=' + apiKey)
