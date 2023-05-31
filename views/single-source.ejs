@@ -1,12 +1,12 @@
 </section>
-<section class="pt-5">
+<section class="pt-6">
     <div class="container shadow section-sm rounded">
         <div class="columns is-multiline">
             <!-- sidebar -->
             <div class="column is-3-desktop is-12-tablet">
                 <ul class="sidenav">
                     <li title="Basic Startup" class="sidelist parent active">
-                        <a href="/sources">Sources</a>
+                        <a href="/sources">Tesla</a>
                         <ul>
                             <% let uniqueNames = []; %>
                             <% sources.forEach((article) => {
@@ -22,45 +22,14 @@
                             }); %>
                         </ul>
                     </li>
-                    <li title="apple" class="sidelist">
-                        <a href="/apple">Apple</a>
-                    </li>
-                    <li class="sidelist">
-                        <a href="/business">Business</a>
-                    </li>
-                    <li class="sidelist">
-                        <a href="/techCrunch">TechCrunch</a>
-                    </li>
-                    <li class="sidelist">
-                        <a href="/wallStreet">Wall Street Journal</a>
-                    </li>
-                    <li class="sidelist">
-                        <a href="/tesla">Tesla</a>
-                    </li>
-                    <li class="sidelist">
-                        <a href="/bitcoin">Bitcoin</a>
-                    </li>
-                    <li class="sidelist">
-                        <a href="/trump">Trump</a>
-                    </li>
-                    <li class="sidelist">
-                        <a href="/us">US News</a>
-                    </li>
-                    <li class="sidelist">
-                        <a href="/bbc">BBC News</a>
-                    </li>
                 </ul>
             </div>
-
             <!-- body -->
-
             <div class="column is-8-desktop is-12-tablet">
-                <div class="content mt-2">
-                    <h2 class="mb-4 has-text-weight-medium">All Sources</h2>
-                    <hr>
-                    <% for (let i = 0; i < sources.length; i++) { %>
-                    <% const source = sources[i]; %>
-                    <div class="card">
+                <div class="px-4">
+                    <h2 class="mb-4 has-text-weight-medium">All articles published by the Wall Street Journal</h2>
+                    <div class="content">
+                        <hr>
                         <div class="card-content">
                             <h2 class="card-title"><%= source.name %></h2>
                             <p class="card-text">
@@ -73,10 +42,7 @@
                             <a href="<%= source.url %>" class="card-link">Read More</a>
                         </div>
                     </div>
-                    <hr>
-                    <% } %>
                 </div>
             </div>
         </div>
-    </div>
 </section>

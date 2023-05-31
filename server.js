@@ -362,6 +362,34 @@ app.get('/sources', function (req, res) {
     });
 });
 
+app.get('/sources/:name', function (req, res) {
+  const decodedName = decodeURIComponent(req.params.name);
+
+  axios.get('https://newsapi.org/v2/top-headlines/sources?&apiKey=' + apiKey)
+    .then(function (response) {
+      let foundSource = null;
+
+      for (let i = 0; i < response.data.sources.length; i++) {
+        let source = response.data.sources[i];
+
+        if (source.name && source.name.toUpperCase() === decodedName.toUpperCase()) {
+          foundSource = source;
+          break;
+        }
+      }
+
+      if (foundSource) {
+        res.render('single-source', { source: foundSource, sources: response.data.sources });
+      } else {
+        res.render('sources', { message: 'Source does not exist.' });
+      }
+    })
+    .catch(function (error) {
+      res.render('sources', { message: 'Data not found. Please try again later.' });
+    });
+});
+
+
 // Top headlines in the US
 app.get('/us', function (req, res) {
   axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=' + apiKey)
