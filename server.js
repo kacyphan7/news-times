@@ -460,7 +460,6 @@ app.get('/bbc', function (req, res) {
     });
 });
 
-
 // get a single BBC News by author
 app.get('/bbc/:author', function (req, res) {
   const decodedAuthor = decodeURIComponent(req.params.author);
@@ -488,6 +487,7 @@ app.get('/bbc/:author', function (req, res) {
       res.render('bbc', { message: 'Data not found. Please try again later.' });
     });
 });
+
 // Top headlines about Trump
 app.get('/trump', function (req, res) {
   axios.get('https://newsapi.org/v2/top-headlines?q=trump&apiKey=' + apiKey)
@@ -506,6 +506,34 @@ app.get('/trump', function (req, res) {
     })
     .catch(function (error) {
       res.json({ message: error.message });
+    });
+});
+
+// get a single Trump by author
+app.get('/trump/:author', function (req, res) {
+  const decodedAuthor = decodeURIComponent(req.params.author);
+
+  axios.get('https://newsapi.org/v2/top-headlines?q=trump&apiKey=' + apiKey)
+    .then(function (response) {
+      let foundArticle = null;
+
+      for (let i = 0; i < response.data.articles.length; i++) {
+        let article = response.data.articles[i];
+
+        if (article.author && article.author.toUpperCase() === decodedAuthor.toUpperCase()) {
+          foundArticle = article;
+          break;
+        }
+      }
+
+      if (foundArticle) {
+        res.render('single-trump', { article: foundArticle, articles: response.data.articles });
+      } else {
+        res.render('trump', { message: 'Article does not exist.' });
+      }
+    })
+    .catch(function (error) {
+      res.render('trump', { message: 'Data not found. Please try again later.' });
     });
 });
 
