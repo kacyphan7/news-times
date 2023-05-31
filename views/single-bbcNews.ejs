@@ -1,0 +1,46 @@
+</section>
+<section class="pt-6">
+    <div class="container shadow section-sm rounded">
+        <div class="columns is-multiline">
+            <!-- sidebar -->
+            <div class="column is-3-desktop is-12-tablet">
+                <ul class="sidenav">
+                    <li title="Basic Startup" class="sidelist parent active">
+                        <a href="/bbc">BBC News</a>
+                        <ul>
+                            <% let uniqueAuthors = []; %>
+                            <% for (let index = 0; index < articles.length; index++) { %>
+                            <% let article = articles[index]; %>
+                            <% if (!uniqueAuthors.includes(article.author)) { %>
+                            <% uniqueAuthors.push(article.author); %>
+                            <li class="sidelist">
+                                <a href="/bbc/<%= article.author %>">
+                                    <%= article.author %>
+                                </a>
+                            </li>
+                            <% } %>
+                            <% } %>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- body -->
+            <div class="column is-8-desktop is-12-tablet">
+                <div class="px-4">
+                    <h2 class="mb-4 has-text-weight-medium">All articles published by the Wall Street Journal</h2>
+                    <div class="content">
+                        <hr>
+                        <div>
+                            <h2><%= article.title %></h2>
+                            <h3><%= article.author %></h3>
+                            <p><img src="<%= article.urlToImage %>"></p>
+                            <p><strong>Published At:</strong> <%= article.publishedAt %></p>
+                            <p><strong>Description:</strong> <%= article.description %></p>
+                            <p><strong>Content:</strong> <%= article.content %></p>
+                            <a href="<%= article.url %>" class="card-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
