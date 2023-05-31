@@ -1,0 +1,43 @@
+</section>
+<section class="pt-6">
+    <div class="container shadow section-sm rounded">
+        <div class="columns is-multiline">
+            <!-- sidebar -->
+            <div class="column is-3-desktop is-12-tablet">
+                <ul class="sidenav">
+                    <li title="Basic Startup" class="sidelist parent active">
+                        <a href="/wallStreet">Wall Street Journal</a>
+                        <ul>
+                            <% for (let index = 0; index < articles.length; index++) { %>
+                            <% let article = articles[index]; %>
+                            <li class="sidelist">
+                                <a href="/wallStreet/<%= article.author %>">
+                                    <%= article.author %>
+                                </a>
+                            </li>
+                            <% } %>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- body -->
+            <div class="column is-8-desktop is-12-tablet">
+                <div class="px-4">
+                    <h2 class="mb-4 has-text-weight-medium">All articles published by the Wall Street Journal</h2>
+                    <div class="content">
+                        <hr>
+                        <div>
+                            <h2><%= wallStreet.title %></h2>
+                            <h3><%= wallStreet.author %></h3>
+                            <p><img src="<%= wallStreet.urlToImage %>"></p>
+                            <p><strong>Published At:</strong> <%= wallStreet.publishedAt %></p>
+                            <p><strong>Description:</strong> <%= wallStreet.description %></p>
+                            <p><strong>Content:</strong> <%= wallStreet.content %></p>
+                            <a href="<%= wallStreet.url %>" class="card-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

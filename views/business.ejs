@@ -8,14 +8,18 @@
                     <li title="Basic Startup" class="sidelist parent active">
                         <a href="/business">Business</a>
                         <ul>
-                            <% for (let index = 0; index < business.length; index++) { %>
-                            <% let businesses = business[index]; %>
+                            <% let uniqueAuthors = []; %>
+                            <% business.forEach((article) => {
+                                if (!uniqueAuthors.includes(article.author)) {
+                                    uniqueAuthors.push(article.author);
+                            %>
                             <li class="sidelist">
-                                <a href="/business/<%= encodeURIComponent(businesses.author) %>">
-                                    <%= businesses.author %>
+                                <a href="/business/<%= encodeURIComponent(article.author) %>">
+                                    <%= article.author %>
                                 </a>
                             </li>
-                            <% } %>
+                            <% }
+                            }); %>
                         </ul>
                     </li>
                     <li class="sidelist">

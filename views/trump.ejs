@@ -5,8 +5,22 @@
             <!-- sidebar -->
             <div class="column is-3-desktop is-12-tablet">
                 <ul class="sidenav">
-                    <li title="bitcoin" class="sidelist">
+                    <li title="Basic Startup" class="sidelist parent active">
                         <a href="/trump">Trump</a>
+                        <ul>
+                            <% let uniqueAuthors = []; %>
+                            <% trump.forEach((article) => {
+                                if (!uniqueAuthors.includes(article.author)) {
+                                    uniqueAuthors.push(article.author);
+                            %>
+                            <li class="sidelist">
+                                <a href="/trump/<%= encodeURIComponent(article.author) %>">
+                                    <%= article.author %>
+                                </a>
+                            </li>
+                            <% }
+                            }); %>
+                        </ul>
                     </li>
                     <li class="sidelist">
                         <a href="/apple">Apple</a>

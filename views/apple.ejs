@@ -8,13 +8,17 @@
                     <li title="Basic Startup" class="sidelist parent active">
                         <a href="/apple">Apple</a>
                         <ul>
+                            <% let authors = new Set(); %>
                             <% for (let index = 0; index < articles.length; index++) { %>
                             <% let article = articles[index]; %>
+                            <% if (!authors.has(article.author)) { %>
                             <li class="sidelist">
                                 <a href="/apple/<%= encodeURIComponent(article.author) %>">
                                     <%= article.author %>
                                 </a>
                             </li>
+                            <% authors.add(article.author); %>
+                            <% } %>
                             <% } %>
                         </ul>
                     </li>

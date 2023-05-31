@@ -5,8 +5,22 @@
             <!-- sidebar -->
             <div class="column is-3-desktop is-12-tablet">
                 <ul class="sidenav">
-                    <li title="sources" class="sidelist">
+                    <li title="Basic Startup" class="sidelist parent active">
                         <a href="/sources">Sources</a>
+                        <ul>
+                            <% let uniqueCountries = []; %>
+                            <% sources.forEach((article) => {
+                                if (!uniqueCountries.includes(article.country)) {
+                                    uniqueCountries.push(article.country);
+                            %>
+                            <li class="sidelist">
+                                <a href="/sources/<%= encodeURIComponent(article.country) %>">
+                                    <%= article.country %>
+                                </a>
+                            </li>
+                            <% }
+                            }); %>
+                        </ul>
                     </li>
                     <li title="apple" class="sidelist">
                         <a href="/apple">Apple</a>

@@ -5,6 +5,23 @@
             <!-- sidebar -->
             <div class="column is-3-desktop is-12-tablet">
                 <ul class="sidenav">
+                    <li title="Basic Startup" class="sidelist parent active">
+                        <a href="/bbc">BBC News</a>
+                        <ul>
+                            <% let uniqueAuthors = []; %>
+                            <% bbc.forEach((article) => {
+                                if (!uniqueAuthors.includes(article.author)) {
+                                    uniqueAuthors.push(article.author);
+                            %>
+                            <li class="sidelist">
+                                <a href="/bbc/<%= encodeURIComponent(article.author) %>">
+                                    <%= article.author %>
+                                </a>
+                            </li>
+                            <% }
+                            }); %>
+                        </ul>
+                    </li>
                     <li title="bitcoin" class="sidelist">
                         <a href="/bbc">BBC News</a>
                     </li>

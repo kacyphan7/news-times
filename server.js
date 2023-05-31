@@ -217,6 +217,33 @@ app.get('/wallStreet', function (req, res) {
     });
 });
 
+// Get a single wallStreet by author
+app.get('/wallStreet/:author', function (req, res) {
+  const decodedAuthor = decodeURIComponent(req.params.author);
+
+  axios.get('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=' + apiKey)
+    .then(function (response) {
+      let found = false;
+
+      for (let i = 0; i < response.data.articles.length; i++) {
+        let article = response.data.articles[i];
+
+        if (article.author && article.author.toUpperCase() === decodedAuthor.toUpperCase()) {
+          res.render('single-wallStreet', { wallStreet: response.data.articles, articles: response.data.articles });
+          found = true;
+          break;
+        }
+      }
+
+      if (!found) {
+        res.render('wallStreet', { message: 'Article does not exist.' });
+      }
+    })
+    .catch(function (error) {
+      res.render('wallStreet', { message: 'Data not found. Please try again later.' });
+    });
+});
+
 // All articles about Tesla from the last month, sorted by recent first
 app.get('/tesla', function (req, res) {
   axios.get('https://newsapi.org/v2/everything?q=tesla&apiKey=' + apiKey)
