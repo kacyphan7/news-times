@@ -362,6 +362,7 @@ app.get('/sources', function (req, res) {
     });
 });
 
+// get a single source by name 
 app.get('/sources/:name', function (req, res) {
   const decodedName = decodeURIComponent(req.params.name);
 
@@ -389,7 +390,6 @@ app.get('/sources/:name', function (req, res) {
     });
 });
 
-
 // Top headlines in the US
 app.get('/us', function (req, res) {
   axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=' + apiKey)
@@ -408,6 +408,34 @@ app.get('/us', function (req, res) {
     })
     .catch(function (error) {
       res.json({ message: error.message });
+    });
+});
+
+// get a single US News by author 
+app.get('/us/:author', function (req, res) {
+  const decodedAuthor = decodeURIComponent(req.params.author);
+
+  axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=' + apiKey)
+    .then(function (response) {
+      let foundArticle = null;
+
+      for (let i = 0; i < response.data.articles.length; i++) {
+        let article = response.data.articles[i];
+
+        if (article.author && article.author.toUpperCase() === decodedAuthor.toUpperCase()) {
+          foundArticle = article;
+          break;
+        }
+      }
+
+      if (foundArticle) {
+        res.render('single-usNews', { article: foundArticle, articles: response.data.articles });
+      } else {
+        res.render('us', { message: 'Article does not exist.' });
+      }
+    })
+    .catch(function (error) {
+      res.render('us', { message: 'Data not found. Please try again later.' });
     });
 });
 
