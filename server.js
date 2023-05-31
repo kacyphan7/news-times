@@ -216,6 +216,7 @@ app.get('/wallStreet', function (req, res) {
       res.json({ message: error.message });
     });
 });
+
 // Get a single wallStreet by author
 app.get('/wallStreet/:author', function (req, res) {
   const decodedAuthor = decodeURIComponent(req.params.author);
@@ -262,6 +263,34 @@ app.get('/tesla', function (req, res) {
     })
     .catch(function (error) {
       res.json({ message: error.message });
+    });
+});
+
+// Get a single tesla by author
+app.get('/tesla/:author', function (req, res) {
+  const decodedAuthor = decodeURIComponent(req.params.author);
+
+  axios.get('https://newsapi.org/v2/everything?q=tesla&apiKey=' + apiKey)
+    .then(function (response) {
+      let foundArticle = null;
+
+      for (let i = 0; i < response.data.articles.length; i++) {
+        let article = response.data.articles[i];
+
+        if (article.author && article.author.toUpperCase() === decodedAuthor.toUpperCase()) {
+          foundArticle = article;
+          break;
+        }
+      }
+
+      if (foundArticle) {
+        res.render('single-tesla', { article: foundArticle, articles: response.data.articles });
+      } else {
+        res.render('tesla', { message: 'Article does not exist.' });
+      }
+    })
+    .catch(function (error) {
+      res.render('tesla', { message: 'Data not found. Please try again later.' });
     });
 });
 
