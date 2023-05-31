@@ -5,8 +5,18 @@
             <!-- sidebar -->
             <div class="column is-3-desktop is-12-tablet">
                 <ul class="sidenav">
-                    <li title="business" class="sidelist">
+                    <li title="Basic Startup" class="sidelist parent active">
                         <a href="/business">Business</a>
+                        <ul>
+                            <% for (let index = 0; index < business.length; index++) { %>
+                            <% let businesses = business[index]; %>
+                            <li class="sidelist">
+                                <a href="/business/<%= encodeURIComponent(businesses.author) %>">
+                                    <%= businesses.author %>
+                                </a>
+                            </li>
+                            <% } %>
+                        </ul>
                     </li>
                     <li class="sidelist">
                         <a href="/apple">Apple</a>

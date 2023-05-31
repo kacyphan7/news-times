@@ -6,12 +6,12 @@
             <div class="column is-3-desktop is-12-tablet">
                 <ul class="sidenav">
                     <li title="Basic Startup" class="sidelist parent active">
-                        <a href="/apple">Apple</a>
+                        <a href="/business">Business</a>
                         <ul>
                             <% for (let index = 0; index < articles.length; index++) { %>
                             <% let article = articles[index]; %>
                             <li class="sidelist">
-                                <a href="/apple/<%= article.author %>">
+                                <a href="/business/<%= article.author %>">
                                     <%= article.author %>
                                 </a>
                             </li>
@@ -20,21 +20,20 @@
                     </li>
                 </ul>
             </div>
-
             <!-- body -->
             <div class="column is-8-desktop is-12-tablet">
                 <div class="px-4">
-                    <h2 class="mb-4 has-text-weight-medium">All articles mentioning Apple</h2>
+                    <h2 class="mb-4 has-text-weight-medium">Top Business Headlines in the US Right Now</h2>
                     <div class="content">
                         <hr>
                         <div>
-                            <h2><%= article.title %></h2>
-                            <h3><%= article.author %></h3>
-                            <p><img src="<%= article.urlToImage %>"></p>
-                            <p><strong>Published At:</strong> <%= article.publishedAt %></p>
-                            <p><strong>Description:</strong> <%= article.description %></p>
-                            <p><strong>Content:</strong> <%= article.content %></p>
-                            <a href="<%= article.url %>" class="card-link">Read More</a>
+                            <h2><%= business.title %></h2>
+                            <h3><%= business.author %></h3>
+                            <p><img src="<%= business.urlToImage %>"></p>
+                            <p><strong>Published At:</strong> <%= business.publishedAt %></p>
+                            <p><strong>Description:</strong> <%= business.description %></p>
+                            <p><strong>Content:</strong> <%= business.content %></p>
+                            <a href="<%= business.url %>" class="card-link">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -42,5 +41,3 @@
         </div>
     </div>
 </section>
-
-<!-- /details page -->

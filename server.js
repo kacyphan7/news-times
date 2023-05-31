@@ -121,6 +121,33 @@ app.get('/business', function (req, res) {
     });
 });
 
+// Get a single business by author
+app.get('/business/:author', function (req, res) {
+  const decodedAuthor = decodeURIComponent(req.params.author); // Decode the author parameter
+
+  axios.get('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=' + apiKey)
+    .then(function (response) {
+      let found = false;
+
+      for (let i = 0; i < response.data.articles.length; i++) {
+        let article = response.data.articles[i];
+
+        if (article.author && article.author.toUpperCase() === decodedAuthor.toUpperCase()) {
+          res.render('single-business', { business: article, articles: response.data.articles });
+          found = true;
+          break; // Exit the loop once the article is found
+        }
+      }
+
+      if (!found) {
+        res.render('business', { message: 'Article does not exist.' });
+      }
+    })
+    .catch(function (error) {
+      res.render('business', { message: 'Data not found. Please try again later.' });
+    });
+});
+
 // Top headlines from TechCrunch right now
 app.get('/techCrunch', function (req, res) {
   axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=' + apiKey)
