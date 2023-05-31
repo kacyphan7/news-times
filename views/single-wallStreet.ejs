@@ -8,13 +8,17 @@
                     <li title="Basic Startup" class="sidelist parent active">
                         <a href="/wallStreet">Wall Street Journal</a>
                         <ul>
+                            <% let uniqueAuthors = []; %>
                             <% for (let index = 0; index < articles.length; index++) { %>
                             <% let article = articles[index]; %>
+                            <% if (!uniqueAuthors.includes(article.author)) { %>
+                            <% uniqueAuthors.push(article.author); %>
                             <li class="sidelist">
                                 <a href="/wallStreet/<%= article.author %>">
                                     <%= article.author %>
                                 </a>
                             </li>
+                            <% } %>
                             <% } %>
                         </ul>
                     </li>
@@ -27,17 +31,16 @@
                     <div class="content">
                         <hr>
                         <div>
-                            <h2><%= wallStreet.title %></h2>
-                            <h3><%= wallStreet.author %></h3>
-                            <p><img src="<%= wallStreet.urlToImage %>"></p>
-                            <p><strong>Published At:</strong> <%= wallStreet.publishedAt %></p>
-                            <p><strong>Description:</strong> <%= wallStreet.description %></p>
-                            <p><strong>Content:</strong> <%= wallStreet.content %></p>
-                            <a href="<%= wallStreet.url %>" class="card-link">Read More</a>
+                            <h2><%= article.title %></h2>
+                            <h3><%= article.author %></h3>
+                            <p><img src="<%= article.urlToImage %>"></p>
+                            <p><strong>Published At:</strong> <%= article.publishedAt %></p>
+                            <p><strong>Description:</strong> <%= article.description %></p>
+                            <p><strong>Content:</strong> <%= article.content %></p>
+                            <a href="<%= article.url %>" class="card-link">Read More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
