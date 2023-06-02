@@ -411,6 +411,11 @@ app.get('/us', function (req, res) {
     });
 });
 
+// create us/search
+app.get('/us/search', function (req, res) {
+  return res.render('us/search');
+});
+
 // get a single US News by author 
 app.get('/us/:author', function (req, res) {
   const decodedAuthor = decodeURIComponent(req.params.author);
@@ -439,13 +444,43 @@ app.get('/us/:author', function (req, res) {
     });
 });
 
+// post US News 
+app.post('/us', function (req, res) {
+  console.log('form data', req.body);
+  axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=' + apiKey)
+    .then(function (response) {
+      const searchData = req.body;
+      const articles = response.data.articles;
+
+      if (searchData.category === 'author') {
+        const authorUs = articles.filter(function (article) {
+          return article.author && article.author.toLowerCase().includes(searchData.item.toLowerCase());
+        });
+        res.render('/us', { bbc: authorUs });
+      } else if (searchData.category === 'title') {
+        const titleUs = articles.filter(function (article) {
+          return article.title && article.title.toLowerCase().includes(searchData.item.toLowerCase());
+        });
+        res.render('/us', { bbc: titleUs });
+      } else if (searchData.category === 'publishedAt') {
+        const publishedAtUs = articles.filter(function (article) {
+          return article.publishedAt && article.publishedAt.includes(searchData.item);
+        });
+        res.render('/us', { bbc: publishedAtUs });
+      }
+    })
+    .catch(function (error) {
+      res.json({ message: 'Data not found. Please try again later.' });
+    });
+});
+
 // Top headlines from BBC News
 app.get('/bbc', function (req, res) {
   axios.get('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=' + apiKey)
     .then(function (response) {
       // handle success
       if (response.status === 200) {
-        let bbc = response.data.articles;
+        const bbc = response.data.articles;
         res.render('bbc', { bbc: bbc });
       } else if (response.status === 404) {
         res.json({ message: 'No articles found.' });
@@ -458,6 +493,11 @@ app.get('/bbc', function (req, res) {
     .catch(function (error) {
       res.json({ message: error.message });
     });
+});
+
+// create bbc/search
+app.get('/bbc/search', function (req, res) {
+  return res.render('bbc/search');
 });
 
 // get a single BBC News by author
@@ -485,6 +525,36 @@ app.get('/bbc/:author', function (req, res) {
     })
     .catch(function (error) {
       res.render('bbc', { message: 'Data not found. Please try again later.' });
+    });
+});
+
+// post BBC News 
+app.post('/bbc/search', function (req, res) {
+  console.log('form data', req.body);
+  axios.get('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=' + apiKey)
+    .then(function (response) {
+      const searchData = req.body;
+      const articles = response.data.articles;
+
+      if (searchData.category === 'author') {
+        const authorBbc = articles.filter(function (article) {
+          return article.author && article.author.toLowerCase().includes(searchData.item.toLowerCase());
+        });
+        res.render('/bbc', { bbc: authorBbc });
+      } else if (searchData.category === 'title') {
+        const titleBbc = articles.filter(function (article) {
+          return article.title && article.title.toLowerCase().includes(searchData.item.toLowerCase());
+        });
+        res.render('/bbc', { bbc: titleBbc });
+      } else if (searchData.category === 'publishedAt') {
+        const publishedAtBbc = articles.filter(function (article) {
+          return article.publishedAt && article.publishedAt.includes(searchData.item);
+        });
+        res.render('/bbc', { bbc: publishedAtBbc });
+      }
+    })
+    .catch(function (error) {
+      res.json({ message: 'Data not found. Please try again later.' });
     });
 });
 
@@ -542,7 +612,7 @@ app.get('/search', (req, res) => {
   res.render('search');
 });
 
-// post search route form 
+// post search route form ============= POST SEARCH ROUTE NEED TO GET SPECIFIC ARTICLE // 
 const validCategories = ['name', 'category', 'language', 'country'];
 
 const excludes = ['ABC News'];
@@ -584,8 +654,6 @@ app.post('/search', function (req, res) {
       res.json({ message: 'Error occurred. Please try again later.' });
     });
 });
-
-
 
 // ===============================================================================//
 const PORT = process.env.PORT || 3000;
