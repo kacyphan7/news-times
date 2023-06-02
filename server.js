@@ -132,7 +132,7 @@ app.get('/business/:author', function (req, res) {
       for (let i = 0; i < response.data.articles.length; i++) {
         let article = response.data.articles[i];
 
-        if (article.author && article.author.toUpperCase() === decodedAuthor.toUpperCase()) {
+        if (article.author && article.author.toUpperCase() === req.params.author.toUpperCase()) {
           res.render('single-business', { business: article, articles: response.data.articles });
           found = true;
           break; // Exit the loop once the article is found
@@ -538,15 +538,56 @@ app.get('/trump/:author', function (req, res) {
 });
 
 // Search page
-/* app.get('/search', (req, res) => {
-  const news = newsAPI.getEverything({
-    q: req.query.q,
-  });
+app.get('/search', (req, res) => {
+  res.render('search');
+});
 
-  res.render('search.ejs', { news });
-}); */
+// post search route form 
+const validCategories = ['name', 'category', 'language', 'country'];
+
+const excludes = ['ABC News'];
+
+app.post('/search', function (req, res) {
+  // Create a new object called searchData
+  const searchData = {};
+
+  // Add the following properties to the searchData object
+  searchData.name = req.body.name;
+  searchData.category = req.body.category;
+  searchData.language = req.body.language;
+  searchData.country = req.body.country;
+
+  // Check if the category is valid
+  if (!validCategories.includes(searchData.category)) {
+    searchData.category = null;
+  }
+
+  // Set the searchTerm property
+  searchData.searchTerm = req.body.searchTerm;
+
+  // Set the exclude property
+  searchData.exclude = excludes;
+
+  // Make a request to the News API to get the top headlines for the specified category
+  axios.get('https://newsapi.org/v2/top-headlines/sources?apiKey=' + apiKey, {
+    params: searchData,
+  })
+    .then(function (response) {
+      if (response.status === 200) {
+        // Redirect the browser to the /sources route with the searchData object as a query string
+        res.redirect(`/sources?${JSON.stringify(searchData)}`);
+      } else {
+        res.json({ message: 'Data not found. Please try again later.' });
+      }
+    })
+    .catch(function (error) {
+      res.json({ message: 'Error occurred. Please try again later.' });
+    });
+});
 
 
+
+// ===============================================================================//
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
   console.log(`📖 You're reading the latest news port ${PORT} 📖`);
@@ -558,3 +599,7 @@ module.exports = {
   PORT,
   axios
 };
+
+
+// Greg Heilman US financial news live updates 2023-05-31
+// redirect page in 
