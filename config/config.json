@@ -1,11 +1,11 @@
 {
   "development": {
-    "database": "express_auth_dev",
+    "database": "news-times",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "express_auth_test",
+    "database": "news_times_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
@@ -13,10 +13,10 @@
     "use_env_variable": "DATABASE_URL",
     "dialect": "postgres",
     "dialectOptions": {
-        "ssl": {
-          "require": true,
-          "rejectUnauthorized": false
-        }
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
     }
   }
 }

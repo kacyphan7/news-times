@@ -52,6 +52,17 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile', { id, name, email });
 });
 
+/* psuedocode 
+app.get('/profile/saved', function (req, res) {
+
+  if (profile === saved list)
+})
+
+// list to redirect 
+// list to view each individual link ejs out and for loop 
+
+*/
+
 // All articles mentioning Apple 
 app.get('/apple', function (req, res) {
   axios.get('https://newsapi.org/v2/everything?q=apple&apiKey=' + apiKey)
@@ -445,7 +456,7 @@ app.get('/us/:author', function (req, res) {
 });
 
 // post US News 
-app.post('/us', function (req, res) {
+/* app.post('/us', function (req, res) {
   console.log('form data', req.body);
   axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=' + apiKey)
     .then(function (response) {
@@ -472,7 +483,7 @@ app.post('/us', function (req, res) {
     .catch(function (error) {
       res.json({ message: 'Data not found. Please try again later.' });
     });
-});
+}); */
 
 // Top headlines from BBC News
 app.get('/bbc', function (req, res) {
@@ -529,7 +540,7 @@ app.get('/bbc/:author', function (req, res) {
 });
 
 // post BBC News 
-app.post('/bbc/search', function (req, res) {
+/* app.post('/bbc/search', function (req, res) {
   console.log('form data', req.body);
   axios.get('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=' + apiKey)
     .then(function (response) {
@@ -551,6 +562,50 @@ app.post('/bbc/search', function (req, res) {
           return article.publishedAt && article.publishedAt.includes(searchData.item);
         });
         res.render('/bbc', { bbc: publishedAtBbc });
+      }
+    })
+    .catch(function (error) {
+      res.json({ message: 'Data not found. Please try again later.' });
+    });
+}); */
+// search by keyword instead of title  2023-06-02 // switch case && for each loop to look up item
+app.post('/bbc', function (req, res) {
+  console.log('form data', req.body);
+  axios.get('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=' + apiKey)
+    .then(function (response) {
+      if (req.body.category === 'author') {
+        for (let i = 0; i < response.data.length; i++) {
+          let bbc = response.data[i];
+          if (bbc.author === req.body.item) {
+            return res.redirect(`/bbc/${bbc.author}`);
+          }
+        }
+      } else if (req.body.category === 'title') { // dont have to search exact title; do keyword
+        const titleBbc = response.data.filter(function (bbc) {
+          console.log('-------------');
+          console.log('bbc', bbc);
+          console.log('title', bbc.title);
+          console.log('item', req.body.item);
+          if (bbc.title.includes(req.body.item)) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+        res.render('bbc', { bbc: titleBbc });
+      } else if (req.body.category === 'publishedAt') {
+        const publishedAtBbc = response.data.filter(function (bbc) {
+          console.log('-------------');
+          console.log('bbc', bbc);
+          console.log('publishedAt', bbc.publishedAt);
+          console.log('item', req.body.item);
+          if (bbc.publishedAt === req.body.item) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+        res.render('bbc', { bbc: publishedAtBbc });
       }
     })
     .catch(function (error) {
@@ -612,6 +667,7 @@ app.get('/search', (req, res) => {
   res.render('search');
 });
 
+/* 
 // post search route form ============= POST SEARCH ROUTE NEED TO GET SPECIFIC ARTICLE // 
 const validCategories = ['name', 'category', 'language', 'country'];
 
@@ -654,6 +710,154 @@ app.post('/search', function (req, res) {
       res.json({ message: 'Error occurred. Please try again later.' });
     });
 });
+*/
+
+/* app.get('/article', (req, res) => {
+  const { name, category } = req.query;
+  res.render('article', { name, category });
+}); */
+
+// language and country not require 
+app.post('/search', async function (req, res) {
+  try {
+    const appleSearch = await axios.get('https://newsapi.org/v2/everything?q=apple&apiKey=' + apiKey);
+    const businessSearch = await axios.get('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=' + apiKey);
+    const techCrunchSearch = await axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=' + apiKey);
+    const wallStreetSearch = await axios.get('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=' + apiKey);
+    const teslaSearch = await axios.get('https://newsapi.org/v2/everything?q=tesla&apiKey=' + apiKey);
+    const bitcoinSearch = await axios.get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=' + apiKey);
+    const sourcesSearch = await axios.get('https://newsapi.org/v2/top-headlines/sources?&apiKey=' + apiKey);
+    const usNewsSearch = await axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=' + apiKey);
+    const bbcNewsSearch = await axios.get('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=' + apiKey);
+    const trumpSearch = await axios.get('https://newsapi.org/v2/top-headlines?q=trump&apiKey=' + apiKey);
+
+    let result = [];
+    switch (req.body.name) {
+      case 'apple':
+        appleSearch.data.forEach((element) => {
+          console.log(element);
+          for (let key in element) {
+            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+              result.push(element);
+            }
+          }
+        });
+        break;
+      case 'business':
+        businessSearch.data.forEach((element) => {
+          console.log(element);
+          for (let key in element) {
+            if (key === req.body.category && element[key] === null) {
+              // result.push(element);
+              continue;
+            } else if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+              result.push(element);
+            }
+          }
+        });
+        break;
+      case 'techCrunch':
+        techCrunchSearch.data.forEach((element) => {
+          console.log(element);
+          for (let key in element) {
+            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+              result.push(element);
+            }
+          }
+        });
+        break;
+      case 'wallStreet':
+        wallStreetSearch.data.forEach((element) => {
+          console.log(element);
+          for (let key in element) {
+            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+              result.push(element);
+            }
+          }
+        });
+        break;
+      case 'tesla':
+        teslaSearch.data.forEach((element) => {
+          console.log(element);
+          for (let key in element) {
+            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+              result.push(element);
+            }
+          }
+        });
+        break;
+      case 'bitcoin':
+        bitcoinSearch.data.forEach((element) => {
+          console.log(element);
+          for (let key in element) {
+            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+              result.push(element);
+            }
+          }
+        });
+        break;
+      case 'sources':
+        sourcesSearch.data.forEach((element) => {
+          console.log(element);
+          for (let key in element) {
+            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+              result.push(element);
+            }
+          }
+        });
+        break;
+      case 'us':
+        usNewsSearch.data.forEach((element) => {
+          console.log(element);
+          for (let key in element) {
+            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+              result.push(element);
+            }
+          }
+        });
+        break;
+      case 'bbc':
+        bbcNewsSearch.data.forEach((element) => {
+          console.log(element);
+          for (let key in element) {
+            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+              result.push(element);
+            }
+          }
+        });
+        break;
+      case 'trump':
+        trumpSearch.data.forEach((element) => {
+          console.log(element);
+          for (let key in element) {
+            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+              result.push(element);
+            }
+          }
+        });
+        break;
+    }
+    console.log('result ---------->', req.body.field);
+    if (result.length < 1) {
+      res.render('search', {
+        elements: result,
+        categoryName: req.body.name || '',
+        fieldName: req.body.category || '',
+        itemName: req.body.item || ''
+      });
+    } else {
+      res.render('search', {
+        elements: result,
+        categoryName: req.body.name || '',
+        fieldName: req.body.category || '',
+        itemName: req.body.item || ''
+      });
+      return res.redirect(`/article?name=${req.body.name}&category=${req.body.category}`);
+    }
+  } catch (error) {
+    res.json({ message: 'Data not found. Please try again later.' });
+  }
+});
 
 // ===============================================================================//
 const PORT = process.env.PORT || 3000;
@@ -667,7 +871,3 @@ module.exports = {
   PORT,
   axios
 };
-
-
-// Greg Heilman US financial news live updates 2023-05-31
-// redirect page in 
