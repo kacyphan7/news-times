@@ -8,6 +8,10 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
+const fs = require('fs');
+const usersDataPath = 'data/users.json';
+const articlesDataPath = 'data/articles.json';
+
 // environment variables 
 const SECRET_SESSION = process.env.SECRET_SESSION;
 const apiKey = process.env.NEWS_API_KEY;
@@ -52,16 +56,227 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile', { id, name, email });
 });
 
-/* psuedocode 
-app.get('/profile/saved', function (req, res) {
+app.get('/articles', isLoggedIn, (req, res) => {
+  try {
+    const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
+    const userData = fs.readFileSync(usersDataPath, 'utf-8');
+    const users = JSON.parse(userData);
+    const user = users.find((u) => u.id === userId);
 
-  if (profile === saved list)
-})
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
 
-// list to redirect 
-// list to view each individual link ejs out and for loop 
+    const savedArticles = user.savedArticles.map((articleId) => {
+      const articleData = fs.readFileSync(articlesDataPath, 'utf-8');
+      const articles = JSON.parse(articleData);
+      return articles.find((a) => a.id === articleId);
+    });
 
-*/
+    res.render('articles', { articles: savedArticles });
+  } catch (error) {
+    req.flash('error', 'Failed to retrieve saved articles');
+    res.redirect('/');
+  }
+});
+
+app.post('/articles', isLoggedIn, async (req, res) => {
+  try {
+    const { title, description, url, source } = req.body;
+
+    // Create the article
+    const article = { id: generateId(), title, description, url, source };
+
+    // Save the article
+    const articleData = fs.readFileSync(articlesDataPath, 'utf-8');
+    const articles = JSON.parse(articleData);
+    articles.push(article);
+    fs.writeFileSync(articlesDataPath, JSON.stringify(articles, null, 2), 'utf-8');
+
+    // Update the user's saved articles
+    const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
+    const userData = fs.readFileSync(usersDataPath, 'utf-8');
+    const users = JSON.parse(userData);
+    const user = users.find((u) => u.id === userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    user.savedArticles.push(article.id);
+    fs.writeFileSync(usersDataPath, JSON.stringify(users, null, 2), 'utf-8');
+
+    req.flash('success', 'Article saved successfully');
+    res.redirect('/');
+  } catch (error) {
+    req.flash('error', 'Failed to save the article');
+    res.redirect('/');
+  }
+});
+
+// Add article to saved list
+app.post('/save-article', isLoggedIn, (req, res) => {
+  try {
+    const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
+    const articleId = req.body.articleId;
+
+    // Retrieve user data
+    const userData = fs.readFileSync(usersDataPath, 'utf-8');
+    const users = JSON.parse(userData);
+    const user = users.find((u) => u.id === userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Check if the article is already saved
+    if (user.savedArticles.includes(articleId)) {
+      return res.status(400).json({ error: 'Article already saved' });
+    }
+
+    // Add the article to the saved list
+    user.savedArticles.push(articleId);
+    fs.writeFileSync(usersDataPath, JSON.stringify(users, null, 2), 'utf-8');
+
+    res.json({ message: 'Article saved successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to save the article' });
+  }
+});
+
+// Remove article from saved list
+app.post('/delete-article', isLoggedIn, (req, res) => {
+  try {
+    const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
+    const articleId = req.body.articleId;
+
+    // Retrieve user data
+    const userData = fs.readFileSync(usersDataPath, 'utf-8');
+    const users = JSON.parse(userData);
+    const user = users.find((u) => u.id === userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Check if the article is saved
+    const articleIndex = user.savedArticles.indexOf(articleId);
+    if (articleIndex === -1) {
+      return res.status(400).json({ error: 'Article not found in saved list' });
+    }
+
+    // Remove the article from the saved list
+    user.savedArticles.splice(articleIndex, 1);
+    fs.writeFileSync(usersDataPath, JSON.stringify(users, null, 2), 'utf-8');
+
+    res.json({ message: 'Article deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to delete the article' });
+  }
+});
+
+app.put('/articles/save', isLoggedIn, (req, res) => {
+  try {
+    const articleAuthor = req.body.articleAuthor; // Assuming the article author is sent in the request body
+    const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
+
+    // Update the user's saved articles
+    const userData = fs.readFileSync(usersDataPath, 'utf-8');
+    const users = JSON.parse(userData);
+    const user = users.find((u) => u.id === userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Check if the article is already saved by the user
+    if (user.savedArticles.includes(articleAuthor)) {
+      return res.status(400).json({ error: 'Article already saved' });
+    }
+
+    user.savedArticles.push(articleAuthor);
+    fs.writeFileSync(usersDataPath, JSON.stringify(users, null, 2), 'utf-8');
+
+    res.json({ message: 'Article saved successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to save the article' });
+  }
+});
+
+app.put('/articles/:author', isLoggedIn, (req, res) => {
+  try {
+    const author = req.params.author;
+    const { title, description, url, source } = req.body;
+
+    // Update the article in your data source based on the author
+
+    res.json({ message: 'Article updated successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to update the article' });
+  }
+});
+
+app.put('/articles/:articleAuthor/read', isLoggedIn, (req, res) => {
+  try {
+    const articleAuthor = req.params.articleAuthor;
+    const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
+
+    // Update the user's read articles
+    const userData = fs.readFileSync(usersDataPath, 'utf-8');
+    const users = JSON.parse(userData);
+    const user = users.find((u) => u.id === userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Check if the article is already marked as read by the user
+    if (user.readArticles.includes(articleAuthor)) {
+      return res.status(400).json({ error: 'Article already marked as read' });
+    }
+
+    user.readArticles.push(articleAuthor);
+    fs.writeFileSync(usersDataPath, JSON.stringify(users, null, 2), 'utf-8');
+
+    res.json({ message: 'Article marked as read successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to mark the article as read' });
+  }
+});
+
+app.delete('/articles/:articleAuthor/unsave', isLoggedIn, (req, res) => {
+  try {
+    const articleAuthor = req.params.articleAuthor;
+    const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
+
+    // Update the user's saved articles
+    const userData = fs.readFileSync(usersDataPath, 'utf-8');
+    const users = JSON.parse(userData);
+    const user = users.find((u) => u.id === userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Remove the article from the user's saved articles based on the author name
+    const index = user.savedArticles.findIndex((article) => article.author === articleAuthor);
+    if (index !== -1) {
+      user.savedArticles.splice(index, 1);
+      fs.writeFileSync(usersDataPath, JSON.stringify(users, null, 2), 'utf-8');
+    }
+
+    res.json({ message: 'Article un-saved successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to un-save the article' });
+  }
+});
+
+function generateId() {
+  return (
+    Math.random().toString(36).substring(2, 15) +
+    Math.random().toString(36).substring(2, 15)
+  );
+}
 
 // All articles mentioning Apple 
 app.get('/apple', function (req, res) {
@@ -667,58 +882,49 @@ app.get('/search', (req, res) => {
   res.render('search');
 });
 
-/* 
-// post search route form ============= POST SEARCH ROUTE NEED TO GET SPECIFIC ARTICLE // 
-const validCategories = ['name', 'category', 'language', 'country'];
+app.post('/search', async function (req, res) {
+  const categories = [
+    'apple',
+    'business',
+    'techCrunch',
+    'wallStreet',
+    'tesla',
+    'bitcoin',
+    'sources',
+    'us',
+    'bbc',
+    'trump',
+  ];
 
-const excludes = ['ABC News'];
+  const category = req.body.category;
 
-app.post('/search', function (req, res) {
-  // Create a new object called searchData
-  const searchData = {};
-
-  // Add the following properties to the searchData object
-  searchData.name = req.body.name;
-  searchData.category = req.body.category;
-  searchData.language = req.body.language;
-  searchData.country = req.body.country;
-
-  // Check if the category is valid
-  if (!validCategories.includes(searchData.category)) {
-    searchData.category = null;
+  if (!categories.includes(category)) {
+    res.status(400).send('Invalid category');
+    return;
   }
 
-  // Set the searchTerm property
-  searchData.searchTerm = req.body.searchTerm;
+  const searchUrl = `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=${apiKey}`;
 
-  // Set the exclude property
-  searchData.exclude = excludes;
+  const searchResponse = await axios.get(searchUrl);
 
-  // Make a request to the News API to get the top headlines for the specified category
-  axios.get('https://newsapi.org/v2/top-headlines/sources?apiKey=' + apiKey, {
-    params: searchData,
-  })
-    .then(function (response) {
-      if (response.status === 200) {
-        // Redirect the browser to the /sources route with the searchData object as a query string
-        res.redirect(`/sources?${JSON.stringify(searchData)}`);
-      } else {
-        res.json({ message: 'Data not found. Please try again later.' });
-      }
-    })
-    .catch(function (error) {
-      res.json({ message: 'Error occurred. Please try again later.' });
+  if (searchResponse.status === 200) {
+    const newsArticles = searchResponse.data.articles;
+
+    if (newsArticles.length === 0) {
+      return res.render('no-result', { category });
+    }
+
+    res.render('search', {
+      newsArticles,
+      category,
     });
+  } else {
+    res.status(searchResponse.status).send(searchResponse.data.message);
+  }
 });
-*/
-
-/* app.get('/article', (req, res) => {
-  const { name, category } = req.query;
-  res.render('article', { name, category });
-}); */
 
 // language and country not require 
-app.post('/search', async function (req, res) {
+/* app.post('/search', async function (req, res) {
   try {
     const appleSearch = await axios.get('https://newsapi.org/v2/everything?q=apple&apiKey=' + apiKey);
     const businessSearch = await axios.get('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=' + apiKey);
@@ -732,7 +938,11 @@ app.post('/search', async function (req, res) {
     const trumpSearch = await axios.get('https://newsapi.org/v2/top-headlines?q=trump&apiKey=' + apiKey);
 
     let result = [];
-    switch (req.body.name) {
+    // inputData.name = inputData.name.toLowerCase()
+    const inputData = { ...req.body };
+    inputData.name = inputData.name.toLowerCase();
+    console.log('print ------->', inputData);
+    switch (inputData.name) {
       case 'apple':
         appleSearch.data.forEach((element) => {
           console.log(element);
@@ -744,121 +954,104 @@ app.post('/search', async function (req, res) {
         });
         break;
       case 'business':
-        businessSearch.data.forEach((element) => {
-          console.log(element);
-          for (let key in element) {
-            if (key === req.body.category && element[key] === null) {
-              // result.push(element);
-              continue;
-            } else if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
-              result.push(element);
-            }
-          }
-        });
+        // businessSearch.data.forEach((element) => {
+        // console.log(element);
+        // for (let key in element) {
+        // if (key === req.body.category && element[key] === null) {
+        // result.push(element);
+        // ontinue;
+        // } else if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+        return res.redirect(`/business`);
+
+        break;
         break;
       case 'techCrunch':
-        techCrunchSearch.data.forEach((element) => {
-          console.log(element);
-          for (let key in element) {
-            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
-              result.push(element);
-            }
-          }
-        });
+        // techCrunchSearch.data.forEach((element) => {
+        // console.log(element);
+        // for (let key in element) {
+        // if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+        return res.redirect(`/techCrunch`);
+
         break;
       case 'wallStreet':
-        wallStreetSearch.data.forEach((element) => {
-          console.log(element);
-          for (let key in element) {
-            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
-              result.push(element);
-            }
-          }
-        });
+        // wallStreetSearch.data.forEach((element) => {
+        // console.log(element);
+        // for (let key in element) {
+        // if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+        return res.redirect(`/wallStreet`);
+
         break;
       case 'tesla':
-        teslaSearch.data.forEach((element) => {
-          console.log(element);
-          for (let key in element) {
-            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
-              result.push(element);
-            }
-          }
-        });
+        // teslaSearch.data.forEach((element) => {
+        // console.log(element);
+        // for (let key in element) {
+        // if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+        return res.redirect(`/tesla`);
+
         break;
       case 'bitcoin':
-        bitcoinSearch.data.forEach((element) => {
-          console.log(element);
-          for (let key in element) {
-            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
-              result.push(element);
-            }
-          }
-        });
+        // bitcoinSearch.data.forEach((element) => {
+        // console.log(element);
+        // for (let key in element) {
+        // if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+        return res.redirect(`/tesla`);
+
         break;
       case 'sources':
-        sourcesSearch.data.forEach((element) => {
-          console.log(element);
-          for (let key in element) {
-            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
-              result.push(element);
-            }
-          }
-        });
+        // sourcesSearch.data.forEach((element) => {
+        // console.log(element);
+        // for (let key in element) {
+        // if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+        return res.redirect(`/sources`);
+
         break;
       case 'us':
-        usNewsSearch.data.forEach((element) => {
-          console.log(element);
-          for (let key in element) {
-            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
-              result.push(element);
-            }
-          }
-        });
+        // case inputData.name.toLowerCase() === 'us':
+        console.log('us news ---->', usNewsSearch.data);
+        // usNewsSearch.data.forEach((element) => {
+        // for (let key in element) {
+        // if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+        return res.redirect(`/us`);
+
         break;
+
       case 'bbc':
-        bbcNewsSearch.data.forEach((element) => {
-          console.log(element);
-          for (let key in element) {
-            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
-              result.push(element);
-            }
-          }
-        });
+        // bbcNewsSearch.data.forEach((element) => {
+        // console.log(element);
+        // for (let key in element) {
+        // if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+        return res.redirect(`/bbc`);
         break;
       case 'trump':
-        trumpSearch.data.forEach((element) => {
-          console.log(element);
-          for (let key in element) {
-            if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
-              result.push(element);
-            }
-          }
-        });
+        // trumpSearch.data.forEach((element) => {
+        console.log('trump ---->', trumpSearch.data);
+        // for (let key in element) {
+        // if (key === req.body.category && element[key].toString().toLowerCase() === req.body.item.toLowerCase()) {
+        return res.redirect(`/trump`);
         break;
     }
-    console.log('result ---------->', req.body.field);
+    console.log('result ---------->', req.body.category);
     if (result.length < 1) {
       res.render('search', {
         elements: result,
-        categoryName: req.body.name || '',
+        categoryName: inputData.name || '',
         fieldName: req.body.category || '',
         itemName: req.body.item || ''
       });
     } else {
       res.render('search', {
         elements: result,
-        categoryName: req.body.name || '',
+        categoryName: inputData.name || '',
         fieldName: req.body.category || '',
         itemName: req.body.item || ''
       });
-      return res.redirect(`/article?name=${req.body.name}&category=${req.body.category}`);
+      return res.redirect(`/article?name=${inputData.name}&category=${req.body.category}`);
     }
   } catch (error) {
     res.json({ message: 'Data not found. Please try again later.' });
   }
 });
-
+*/
 // ===============================================================================//
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {

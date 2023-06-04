@@ -4,16 +4,28 @@
         <div class="columns is-desktop is-justify-content-center">
             <div class="column is-8-desktop">
                 <div class="p-6 shadow rounded content">
-                    <h2 class="section-title">Search Sources</h2>
+                    <h2 class="section-title">Search Articles</h2>
                     <form method="POST" action="/search">
                         <div class="columns is-multiline">
                             <div class="form-group column is-12">
-                                <label for="name">Name</label>
-                                <input type="text" class="input" id="name" name="name" placeholder="ABC News" required>
+                                <label for="category">Search By Category</label>
+                                <select id="category" class="input custom-select" name="category" required>
+                                    <option selected disabled>Choose Your Category</option>
+                                    <option value="apple">Apple</option>
+                                    <option value="business">Business</option>
+                                    <option value="techCrunch">TechCrunch</option>
+                                    <option value="wallStreet">Wall Street Journal</option>
+                                    <option value="tesla">Tesla</option>
+                                    <option value="bitcoin">Bitcoin</option>
+                                    <option value="trump">Trump</option>
+                                    <option value="us">US News</option>
+                                    <option value="bbc">BBC News</option>
+                                    <option value="sources">Sources</option>
+                                </select>
                             </div>
                             <div class="form-group column is-12">
-                                <label for="category">Category</label>
-                                <input type="text" class="input" id="category" name="category" placeholder="general"
+                                <label for="item">Item</label>
+                                <input type="text" class="input" id="item" name="item" placeholder="Search Articles"
                                     required>
                             </div>
                             <div class="column is-12">

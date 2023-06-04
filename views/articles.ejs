@@ -1,9 +1,35 @@
 </section>
-<div class="container">
-    <h2 class="title">Article Details</h2>
-    <div>
-        <h3>Name: <%= name %></h3>
-        <h3>Category: <%= category %></h3>
+<h1>Articles</h1>
+
+<% if (articles.length === 0) { %>
+<p>No articles available.</p>
+<% } else { %>
+<div class="articles-container">
+    <% articles.forEach((article) => { %>
+    <div class="article">
+        <!-- Article content here -->
     </div>
+    <% }) %>
 </div>
-</section>
+<% } %>
+
+<h1>Your Saved Articles</h1>
+
+<% if (savedArticles.length === 0) { %>
+<p>No articles saved yet.</p>
+<% } else { %>
+<div class="saved-articles-container">
+    <% savedArticles.forEach((article) => { %>
+    <div class="article">
+        <!-- Saved article content here -->
+    </div>
+    <% }) %>
+</div>
+<% } %>
+
+<!-- the existing section displays the articles, and a new section is added to display the saved articles. 
+The specific content and styling for each article section can be customized based on requirements.
+
+Remember to pass the savedArticles data to the articles.ejs template when rendering it in the route that displays 
+the articles and saved articles together.
+-->
