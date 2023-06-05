@@ -15,6 +15,10 @@
                                 <p><%= article.description %></p>
                                 <p><%= article.content %></p>
                                 <p>Published at: <%= article.publishedAt %></p>
+                                <!-- Delete button -->
+                                <form action="/savedArticles/delete/<%= article.id %>" method="POST">
+                                    <button type="submit" class="button is-danger">Delete</button>
+                                </form>
                             </li>
                             <% }); %>
                         </ul>

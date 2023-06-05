@@ -81,7 +81,7 @@ body {
 
 html,
 body {
-    background: white;
+    background-color: white;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
@@ -179,7 +179,7 @@ body {
 
 .is-shady {
     animation: flyintoright .4s backwards;
-    background: #fff;
+    background: white;
     box-shadow: rgba(0, 0, 0, .1) 0 1px 0;
     border-radius: 4px;
     display: inline-block;
