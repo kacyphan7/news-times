@@ -8,9 +8,10 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
-const fs = require('fs');
-const usersDataPath = 'data/users.json';
-const articlesDataPath = 'data/articles.json';
+// const path = require('path');
+// const fs = require('fs');
+// const usersDataPath = 'data/users.json';
+// const articlesDataPath = 'data/articles.json';
 
 // environment variables 
 const SECRET_SESSION = process.env.SECRET_SESSION;
@@ -19,6 +20,7 @@ const apiKey = process.env.NEWS_API_KEY;
 // console.log('>>>>>>>>', SECRET_SESSION);
 
 app.set('view engine', 'ejs');
+// app.set('views', path.join(__dirname, 'views'));
 app.use(ejsLayouts);
 app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: false }));
@@ -56,31 +58,11 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile', { id, name, email });
 });
 
-app.get('/articles', isLoggedIn, (req, res) => { // <- must sign in to access saved articles 
-  try {
-    const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
-    const userData = fs.readFileSync(usersDataPath, 'utf-8');
-    const users = JSON.parse(userData);
-    const user = users.find((u) => u.id === userId);
-
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-
-    const savedArticles = user.savedArticles.map((articleId) => {
-      const articleData = fs.readFileSync(articlesDataPath, 'utf-8');
-      const articles = JSON.parse(articleData);
-      return articles.find((a) => a.id === articleId);
-    });
-
-    res.render('articles', { articles: savedArticles });
-  } catch (error) {
-    req.flash('error', 'Failed to retrieve saved articles');
-    res.redirect('/');
-  }
+app.get('/profile/articles', isLoggedIn, (req, res) => {
+  res.redirect('/profile/savedArticles');
 });
 
-app.post('/articles', isLoggedIn, async (req, res) => { // <- fail to save articles 
+/* app.post('/profile/articles', isLoggedIn, async (req, res) => { // <- fail to save articles 
   try {
     const { title, description, url, source } = req.body;
 
@@ -112,10 +94,10 @@ app.post('/articles', isLoggedIn, async (req, res) => { // <- fail to save artic
     req.flash('error', 'Failed to save the article');
     res.redirect('/');
   }
-});
+}); */
 
 // Add article to saved list
-app.post('/save-article', isLoggedIn, (req, res) => {
+/* app.post('/save-article', isLoggedIn, (req, res) => {
   try {
     const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
     const articleId = req.body.articleId;
@@ -142,10 +124,10 @@ app.post('/save-article', isLoggedIn, (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to save the article' });
   }
-});
+}); */
 
 // Remove article from saved list
-app.post('/delete-article', isLoggedIn, (req, res) => {
+/* app.post('/delete-article', isLoggedIn, (req, res) => {
   try {
     const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
     const articleId = req.body.articleId;
@@ -173,9 +155,9 @@ app.post('/delete-article', isLoggedIn, (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to delete the article' });
   }
-});
+}); */
 
-app.put('/articles/save', isLoggedIn, (req, res) => {
+/* app.put('/articles/save', isLoggedIn, (req, res) => {
   try {
     const articleAuthor = req.body.articleAuthor; // Assuming the article author is sent in the request body
     const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
@@ -201,9 +183,9 @@ app.put('/articles/save', isLoggedIn, (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to save the article' });
   }
-});
+}); */
 
-app.put('/articles/:author', isLoggedIn, (req, res) => {
+/* app.put('/articles/:author', isLoggedIn, (req, res) => {
   try {
     const author = req.params.author;
     const { title, description, url, source } = req.body;
@@ -214,9 +196,9 @@ app.put('/articles/:author', isLoggedIn, (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to update the article' });
   }
-});
+}); */
 
-app.put('/articles/:articleAuthor/read', isLoggedIn, (req, res) => {
+/* app.put('/articles/:articleAuthor/read', isLoggedIn, (req, res) => {
   try {
     const articleAuthor = req.params.articleAuthor;
     const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
@@ -242,9 +224,9 @@ app.put('/articles/:articleAuthor/read', isLoggedIn, (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to mark the article as read' });
   }
-});
+}); */
 
-app.delete('/articles/:articleAuthor/unsave', isLoggedIn, (req, res) => {
+/* app.delete('/articles/:articleAuthor/unsave', isLoggedIn, (req, res) => {
   try {
     const articleAuthor = req.params.articleAuthor;
     const userId = req.user.id; // Assuming user authentication middleware is used to populate req.user
@@ -276,7 +258,7 @@ function generateId() {
     Math.random().toString(36).substring(2, 15) +
     Math.random().toString(36).substring(2, 15)
   );
-}
+} */
 
 // All articles mentioning Apple 
 app.get('/apple', function (req, res) {
