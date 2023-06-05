@@ -8,7 +8,8 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
-// const path = require('path');
+const methodOverride = require('method-override');
+const path = require('path');
 // const fs = require('fs');
 // const usersDataPath = 'data/users.json';
 // const articlesDataPath = 'data/articles.json';
@@ -20,9 +21,10 @@ const apiKey = process.env.NEWS_API_KEY;
 // console.log('>>>>>>>>', SECRET_SESSION);
 
 app.set('view engine', 'ejs');
-// app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.use(ejsLayouts);
 app.use(require('morgan')('dev'));
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 app.use(layouts);
@@ -51,15 +53,12 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/savedArticles', require('./controllers/savedArticles'));
 
 // Add this above /auth controllers
 app.get('/profile', isLoggedIn, (req, res) => {
   const { id, name, email } = req.user.get();
   res.render('profile', { id, name, email });
-});
-
-app.get('/profile/articles', isLoggedIn, (req, res) => {
-  res.redirect('/profile/savedArticles');
 });
 
 /* app.post('/profile/articles', isLoggedIn, async (req, res) => { // <- fail to save articles 

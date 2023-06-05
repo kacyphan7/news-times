@@ -1,11 +1,31 @@
 </section>
-<h1>Saved Articles</h1>
+<section class="pt-6">
+    <div class="container shadow section-sm rounded">
+        <div class="columns is-multiline">
+            <div class="column is-8-desktop is-12-tablet">
+                <div class="px-4">
+                    <h1 class="mb-4 has-text-weight-medium">Saved Articles</h1>
+                    <div class="content">
+                        <hr>
+                        <% if (savedArticles && savedArticles.length > 0) { %>
+                        <ul>
+                            <% savedArticles.forEach(article => { %>
+                            <li>
+                                <h3><%= article.title %></h3>
+                                <p><%= article.description %></p>
+                                <p><%= article.content %></p>
+                                <p>Published at: <%= article.publishedAt %></p>
+                            </li>
+                            <% }); %>
+                        </ul>
+                        <% } else { %>
+                        <p>No saved articles found.</p>
+                        <% } %>
 
-
-<!-- the existing section displays the articles, and a new section is added to display the saved articles. 
-The specific content and styling for each article section can be customized based on requirements.
-
-Remember to pass the savedArticles data to the articles.ejs template when rendering it in the route that displays 
-the articles and saved articles together.
-
--->
+                        <a href="/profile">Back to Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
