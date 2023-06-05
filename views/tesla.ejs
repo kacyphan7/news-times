@@ -69,6 +69,11 @@
                                 <%= teslas.description %>
                             </p>
                             <a href="<%= teslas.url %>" class="card-link">Read More</a>
+                            <hr>
+                            <form action="/savedArticles/add" method="POST">
+                                <input type="hidden" name="teslasId" value="<%= teslas.id %>">
+                                <button type="submit" class="button is-black">Save</button>
+                            </form>
                         </div>
                     </div>
                     <hr>

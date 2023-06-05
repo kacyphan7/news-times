@@ -69,6 +69,11 @@
                                 <%= techCrunches.description %>
                             </p>
                             <a href="<%= techCrunches.url %>" class="card-link">Read More</a>
+                            <hr>
+                            <form action="/savedArticles/add" method="POST">
+                                <input type="hidden" name="techCrunchesId" value="<%= techCrunches.id %>">
+                                <button type="submit" class="button is-black">Save</button>
+                            </form>
                         </div>
                     </div>
                     <hr>

@@ -40,9 +40,15 @@
                                 Country: <%= source.country %><br>
                             </p>
                             <a href="<%= source.url %>" class="card-link">Read More</a>
+                            <hr>
+                            <form action="/savedArticles/add" method="POST">
+                                <input type="hidden" name="sourceId" value="<%= source.id %>">
+                                <button type="submit" class="button is-black">Save</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 </section>
+<hr>

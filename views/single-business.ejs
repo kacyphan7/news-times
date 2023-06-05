@@ -34,6 +34,11 @@
                             <p><strong>Description:</strong> <%= business.description %></p>
                             <p><strong>Content:</strong> <%= business.content %></p>
                             <a href="<%= business.url %>" class="card-link">Read More</a>
+                            <hr>
+                            <form action="/savedArticles/add" method="POST">
+                                <input type="hidden" name="businessId" value="<%= business.id %>">
+                                <button type="submit" class="button is-black">Save</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -41,3 +46,4 @@
         </div>
     </div>
 </section>
+<hr>

@@ -69,6 +69,11 @@
                                 <%= usNews.description %>
                             </p>
                             <a href="<%= usNews.url %>" class="card-link">Read More</a>
+                            <hr>
+                            <form action="/savedArticles/add" method="POST">
+                                <input type="hidden" name="usNewsId" value="<%= usNews.id %>">
+                                <button type="submit" class="button is-black">Save</button>
+                            </form>
                         </div>
                     </div>
                     <hr>

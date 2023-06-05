@@ -73,6 +73,11 @@
                                 <%= wallStreets.description %>
                             </p>
                             <a href="<%= wallStreets.url %>" class="card-link">Read More</a>
+                            <hr>
+                            <form action="/savedArticles/add" method="POST">
+                                <input type="hidden" name="wallStreetsId" value="<%= wallStreets.id %>">
+                                <button type="submit" class="button is-black">Save</button>
+                            </form>
                         </div>
                     </div>
                     <hr>

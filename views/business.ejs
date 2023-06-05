@@ -69,6 +69,11 @@
                                 <%= businesses.description %>
                             </p>
                             <a href="<%= businesses.url %>" class="card-link">Read More</a>
+                            <hr>
+                            <form action="/savedArticles/add" method="POST">
+                                <input type="hidden" name="businessesId" value="<%= businesses.id %>">
+                                <button type="submit" class="button is-black">Save</button>
+                            </form>
                         </div>
                     </div>
                     <hr>

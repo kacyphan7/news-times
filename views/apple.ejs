@@ -72,6 +72,12 @@
                                 <%= article.description %>
                             </p>
                             <a href="<%= article.url %>" class="card-link">Read More</a>
+                            <hr>
+                            <!-- Save button -->
+                            <form action="/savedArticles/add" method="POST">
+                                <input type="hidden" name="articleId" value="<%= article.id %>">
+                                <button type="submit" class="button is-black">Save</button>
+                            </form>
                         </div>
                     </div>
                     <hr>

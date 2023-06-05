@@ -69,6 +69,11 @@
                                 <%= trumps.description %>
                             </p>
                             <a href="<%= trumps.url %>" class="card-link">Read More</a>
+                            <hr>
+                            <form action="/savedArticles/add" method="POST">
+                                <input type="hidden" name="trumpsId" value="<%= trumps.id %>">
+                                <button type="submit" class="button is-black">Save</button>
+                            </form>
                         </div>
                     </div>
                     <hr>

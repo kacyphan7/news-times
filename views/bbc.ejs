@@ -72,6 +72,11 @@
                                 <%= bbcNews.description %>
                             </p>
                             <a href="<%= bbcNews.url %>" class="card-link">Read More</a>
+                            <hr>
+                            <form action="/savedArticles/add" method="POST">
+                                <input type="hidden" name="bbcNewsId" value="<%= bbcNews.id %>">
+                                <button type="submit" class="button is-black">Save</button>
+                            </form>
                         </div>
                     </div>
                     <hr>
