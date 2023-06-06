@@ -9,7 +9,8 @@
                 <div class="profile-card-4 z-depth-3">
                     <div class="card">
                         <div class="card-body text-center rounded-top">
-                            <form method="POST" action="/profile/edit">
+                            <form action="/profile/edit" method="POST">
+                                <input type="hidden" name="_method" value="PUT">
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Name</label>
                                     <div class="col-lg-9">
@@ -62,7 +63,8 @@
                                 </div>
                                 <br>
                                 <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                                    <label class="col-lg-3 col-form-label form-control-label">Confirm
+                                        password</label>
                                     <div class="col-lg-9">
                                         <input class="form-control" type="password" value=""
                                             placeholder="Confirm Password">
@@ -73,7 +75,7 @@
                                     <label class="col-lg-3 col-form-label form-control-label"></label>
                                     <div class="col-lg-9">
                                         <a href="/profile" class="btn btn-secondary">Cancel</a>
-                                        <input type="submit" class="btn btn-primary" value="Save Changes">
+                                        <input type="submit" class="btn btn-primary" value="Update Profile">
                                     </div>
                                 </div>
                             </form>

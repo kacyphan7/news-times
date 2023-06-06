@@ -126,29 +126,9 @@
                       <tbody>
                         <tr>
                           <td>
-                            <strong>In progress</strong> "Hacker Pleads Guilty to Hijacking Barack, Elon, and Kim
-                            K's..."
-                            in
-                            <strong>`Bitcoin`</strong>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
                             <strong>In progress</strong> "Blood-Test Customers Mistakenly Told They May Have Cancer..."
                             in
                             <strong>`Wall Street Journal`</strong>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>In progress</strong> "Saudi Arabia Cuts Oil Output After OPEC Members Clash..." in
-                            <strong>`Top Business Headlines in the US Right Now`</strong>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>Viewed</strong> "Jack Dorsey endorses fellow Bitcoin..." in
-                            <strong>`Tesla`</strong>
                           </td>
                         </tr>
                         <tr>
@@ -171,32 +151,17 @@
                             <strong>`Top Headlinesfrom BBC News`</strong>
                           </td>
                         </tr>
-                        <tr>
-                          <td>
-                            <strong>Viewed</strong> "Trump-Appointed Judge Rejects Tennessee's Anti-Drag Law..." in
-                            <strong>`Top Headlines About Trump`</strong>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>Viewed</strong> "With oil prices slumping, OPEC+ producers weigh more..." in
-                            <strong>`Top Headlines in the US`</strong>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>Viewed</strong> "With 'Silo,' Apple TV+ Strikes Prestige Sci-Fi Gold..." in
-                            <strong>`Apple`</strong>
-                          </td>
-                        </tr>
                       </tbody>
                     </table>
+                    </tbody>
+                    </table>
                     <div class="text-center">
-                      <form action="/profile" method="POST"
+                      <form method="POST" action="/profile/<%= user.id %>"
                         onsubmit="return confirm('Are you sure you want to delete your profile?');">
                         <input type="hidden" name="_method" value="DELETE">
-                        <button class="btn btn-danger" type="submit">Delete Profile</button>
+                        <input class="button is-danger mt-1" type="submit" value="DELETE">
                       </form>
+
                     </div>
                   </div>
                 </div>

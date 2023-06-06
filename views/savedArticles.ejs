@@ -1,36 +1,31 @@
 </section>
 <section class="section">
     <div class="container">
-        <div class="columns is-justify-content-center">
-            <div class="column is-8-desktop">
-                <h1 class="mb-5 has-text-weight-medium">SAVED ARTICLES
-                </h1>
-                <div class="p-6 shadow rounded">
-                    <div class="has-text-centered">
-                        <% if (savedArticles && savedArticles.length > 0) { %>
-                        <ul>
-                            <% savedArticles.forEach(article => { %>
-                            <li>
-                                <h3><%= article.title %></h3>
-                                <p><%= article.description %></p>
-                                <p><%= article.content %></p>
-                                <p>Published at: <%= article.publishedAt %></p>
-                                <!-- Delete button -->
-                                <form action="/savedArticles/delete/<%= article.id %>" method="POST">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="button is-danger">Delete</button>
-                                </form>
-
-                            </li>
-                            <% }); %>
-                        </ul>
-                        <% } else { %>
-                        <p>No saved articles found.</p>
-                        <% } %>
-
-                        <a href="/profile">Back to Profile</a>
+        <div class="column is-8-desktop is-12-tablet">
+            <div class="content mt-2">
+                <h1 class="mb-4 has-text-weight-medium">SAVED ARTICLES</h1>
+                <% if (savedArticles && savedArticles.length > 0) { %>
+                <% savedArticles.forEach(article => { %>
+                <div class="card">
+                    <div class="card-content">
+                        <p>Published at: <%= article.publishedAt %></p>
+                        <hr>
+                        <!-- Debug output -->
+                        <pre><%= JSON.stringify(article, null, 2) %></pre>
+                        <br>
+                        <!-- Delete button -->
+                        <form action="/savedArticles/delete/<%= article.id %>" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="button is-danger">Delete</button>
+                        </form>
                     </div>
                 </div>
+                <% }); %>
+                <% } else { %>
+                <p>No saved articles found.</p>
+                <% } %>
+                <br>
+                <a href="/profile" class="button is-black">Back to Profile</a>
             </div>
         </div>
     </div>

@@ -62,6 +62,7 @@ app.get('/', (req, res) => {
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/savedArticles', require('./controllers/savedArticles'));
+app.use('/profile', require('./controllers/profile'));
 
 // Add this above /auth controllers
 /* app.get('/profile', isLoggedIn, (req, res) => {

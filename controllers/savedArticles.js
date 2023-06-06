@@ -58,6 +58,55 @@ router.post('/delete/:id', isLoggedIn, async (req, res) => {
     }
 });
 
+// PUT /savedArticles/update/:id - Update a saved article
+router.put('/update/:id', isLoggedIn, async (req, res) => {
+    try {
+        const { id } = req.params;
+        // Retrieve the updated article data from the request body
+        const { title, content } = req.body;
+
+        // Update the article in the database or any other data source
+        const article = await Article.findByPk(id);
+        if (!article) {
+            return res.status(404).send('Article not found');
+        }
+        article.title = title;
+        article.content = content;
+
+        // Save the updated article
+        await article.save();
+
+        res.status(200).send('Article updated successfully');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+// PUT /savedArticles/move/:id - Move a saved article to a different category
+router.put('/move/:id', isLoggedIn, async (req, res) => {
+    try {
+        const { id } = req.params;
+        // Retrieve the new category data from the request body
+        const { category } = req.body;
+
+        // Update the article's category in the database or any other data source
+        const article = await Article.findByPk(id);
+        if (!article) {
+            return res.status(404).send('Article not found');
+        }
+        article.category = category;
+
+        // Save the updated article
+        await article.save();
+
+        res.status(200).send('Article moved to a different category successfully');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 // DELETE /savedArticles/delete/:id - Delete a saved article
 router.delete('/delete/:id', isLoggedIn, async (req, res) => {
     try {
@@ -78,4 +127,3 @@ router.delete('/delete/:id', isLoggedIn, async (req, res) => {
 });
 
 module.exports = router;
-
