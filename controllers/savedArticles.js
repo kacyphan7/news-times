@@ -58,5 +58,24 @@ router.post('/delete/:id', isLoggedIn, async (req, res) => {
     }
 });
 
+// DELETE /savedArticles/delete/:id - Delete a saved article
+router.delete('/delete/:id', isLoggedIn, async (req, res) => {
+    try {
+        // Retrieve the article ID from the request parameters
+        const { id } = req.params;
+
+        // Delete the article from the database or any other data source
+        await articles.destroy({
+            where: { id, author: req.user.id }, // Delete the article for the logged-in user based on the ID and author
+        });
+
+        // Redirect back to the saved articles page
+        res.redirect('/savedArticles');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 module.exports = router;
 

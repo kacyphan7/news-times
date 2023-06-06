@@ -7,9 +7,10 @@ const ejsLayouts = require('express-ejs-layouts');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('./config/ppConfig');
-const isLoggedIn = require('./middleware/isLoggedIn');
 const methodOverride = require('method-override');
 const path = require('path');
+const mime = require('mime');
+const profileRouter = require('./controllers/profile');
 // const fs = require('fs');
 // const usersDataPath = 'data/users.json';
 // const articlesDataPath = 'data/articles.json';
@@ -26,7 +27,6 @@ app.use(ejsLayouts);
 app.use(require('morgan')('dev'));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(__dirname + '/public'));
 app.use(layouts);
 
 app.use(flash()); // flash middleware
@@ -48,6 +48,14 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.static('public', {
+  setHeaders: (res, path) => {
+    res.setHeader('Content-Type', mime.getType(path));
+  }
+}));
+
+app.use('/profile', profileRouter);
+
 app.get('/', (req, res) => {
   res.render('index');
 });
@@ -56,10 +64,10 @@ app.use('/auth', require('./controllers/auth'));
 app.use('/savedArticles', require('./controllers/savedArticles'));
 
 // Add this above /auth controllers
-app.get('/profile', isLoggedIn, (req, res) => {
+/* app.get('/profile', isLoggedIn, (req, res) => {
   const { id, name, email } = req.user.get();
   res.render('profile', { id, name, email });
-});
+}); */
 
 /* app.post('/profile/articles', isLoggedIn, async (req, res) => { // <- fail to save articles 
   try {
@@ -619,9 +627,9 @@ app.get('/us', function (req, res) {
 });
 
 // create us/search
-app.get('/us/search', function (req, res) {
+/* app.get('/us/search', function (req, res) {
   return res.render('us/search');
-});
+}); */
 
 // get a single US News by author 
 app.get('/us/:author', function (req, res) {
@@ -673,9 +681,9 @@ app.get('/bbc', function (req, res) {
 });
 
 // create bbc/search
-app.get('/bbc/search', function (req, res) {
+/* app.get('/bbc/search', function (req, res) {
   return res.render('bbc/search');
-});
+});*/
 
 // get a single BBC News by author
 app.get('/bbc/:author', function (req, res) {
@@ -706,7 +714,7 @@ app.get('/bbc/:author', function (req, res) {
 });
 
 // search by keyword instead of title  2023-06-02 // switch case && for each loop to look up item
-app.post('/bbc', function (req, res) {
+/* app.post('/bbc', function (req, res) {
   console.log('form data', req.body);
   axios.get('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=' + apiKey)
     .then(function (response) {
@@ -748,7 +756,7 @@ app.post('/bbc', function (req, res) {
     .catch(function (error) {
       res.json({ message: 'Data not found. Please try again later.' });
     });
-});
+}); */
 
 // Top headlines about Trump
 app.get('/trump', function (req, res) {
