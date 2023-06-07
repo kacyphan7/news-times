@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const isLoggedIn = require('../middleware/isLoggedIn');
-const { article } = require('../models'); // Import the articles model or any other necessary dependencies
+const { article, user } = require('../models'); // Import the articles model or any other necessary dependencies
 
 // GET /savedArticles - Display the saved articles page
 router.get('/', isLoggedIn, async (req, res) => {

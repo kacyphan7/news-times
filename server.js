@@ -11,9 +11,6 @@ const methodOverride = require('method-override');
 const path = require('path');
 const mime = require('mime');
 const profileRouter = require('./controllers/profile');
-// const fs = require('fs');
-// const usersDataPath = 'data/users.json';
-// const articlesDataPath = 'data/articles.json';
 
 // environment variables 
 const SECRET_SESSION = process.env.SECRET_SESSION;

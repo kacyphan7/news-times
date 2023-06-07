@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const isLoggedIn = require('../middleware/isLoggedIn');
 const isLoggedOut = require('../middleware/isLoggedOut');
-const { user } = require('../models');
+const { user, article } = require('../models');
 
 // GET /profile - Display the profile page
 router.get('/', isLoggedIn, async (req, res) => {
@@ -92,7 +92,7 @@ router.put('/:id', isLoggedIn, async (req, res) => {
         .then(() => {
             req.logOut(function (err, next) {
                 if (err) { return next(err); }
-                req.flash('success', 'Logging out... See you next time!');
+                req.flash('success', 'Account does not exist. Please sign up!');
                 res.redirect('/');
             });
         })
@@ -100,36 +100,6 @@ router.put('/:id', isLoggedIn, async (req, res) => {
             res.status(500).send('Internal Server Error');
         });
 });
-
-/* router.put('/update/:id', isLoggedIn, async (req, res) => {
-    try {
-        const { id } = req.params;
-        // Retrieve the updated profile data from the request body
-        const { name, email, address, city, state, password } = req.body;
-
-        // Update the user's profile in the database or any other data source
-        const user = await user.findByPk(id);
-        if (!user) {
-            return res.status(404).send('User not found');
-        }
-
-        // Check if the user's account is active
-        user.name = name;
-        user.email = email;
-        user.address = address;
-        user.city = city;
-        user.state = state;
-        user.password = password;
-
-        // Save the updated user profile
-        await user.save();
-
-        res.status(200).send('Profile updated successfully');
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Internal Server Error');
-    }
-}); */
 
 // DELETE /profile - Delete the user's profile
 router.delete('/profile', isLoggedIn, async (req, res) => {
