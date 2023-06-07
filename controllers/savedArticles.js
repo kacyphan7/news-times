@@ -60,7 +60,7 @@ router.post('/delete/:id', isLoggedIn, async (req, res) => {
 });
 
 // PUT /savedArticles/update/:id - Update a saved article
-/* router.put('/update/:id', isLoggedIn, async (req, res) => {
+router.put('/update/:id', isLoggedIn, async (req, res) => {
     try {
         const { id } = req.params;
         // Retrieve the updated article data from the request body
@@ -82,10 +82,10 @@ router.post('/delete/:id', isLoggedIn, async (req, res) => {
         console.error(error);
         res.status(500).send('Internal Server Error');
     }
-}); */
+});
 
 // PUT /savedArticles/move/:id - Move a saved article to a different category
-/* router.put('/move/:id', isLoggedIn, async (req, res) => {
+router.put('/move/:id', isLoggedIn, async (req, res) => {
     try {
         const { id } = req.params;
         // Retrieve the new category data from the request body
@@ -106,7 +106,7 @@ router.post('/delete/:id', isLoggedIn, async (req, res) => {
         console.error(error);
         res.status(500).send('Internal Server Error');
     }
-}); */
+});
 
 // DELETE /savedArticles/delete/:id - Delete a saved article
 router.delete('/delete/:id', isLoggedIn, async (req, res) => {
