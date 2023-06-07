@@ -80,7 +80,7 @@ router.post('/profile', isLoggedIn, async (req, res) => {
 });
 
 // PUT /profile/update/:id - Update the user's profile
-/* router.put('/:id', isLoggedIn, async (req, res) => {
+router.put('/:id', isLoggedIn, async (req, res) => {
     const putUserProfile = { ...req.user };
 
     putUserProfile.active = false;
@@ -99,9 +99,9 @@ router.post('/profile', isLoggedIn, async (req, res) => {
         .catch((error) => {
             res.status(500).send('Internal Server Error');
         });
-}); */
+});
 
-router.put('/update/:id', isLoggedIn, async (req, res) => {
+/* router.put('/update/:id', isLoggedIn, async (req, res) => {
     try {
         const { id } = req.params;
         // Retrieve the updated profile data from the request body
@@ -129,7 +129,7 @@ router.put('/update/:id', isLoggedIn, async (req, res) => {
         console.error(error);
         res.status(500).send('Internal Server Error');
     }
-});
+}); */
 
 // DELETE /profile - Delete the user's profile
 router.delete('/profile', isLoggedIn, async (req, res) => {
