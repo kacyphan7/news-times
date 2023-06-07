@@ -2,11 +2,7 @@ const express = require('express');
 const router = express.Router();
 const isLoggedIn = require('../middleware/isLoggedIn');
 const isLoggedOut = require('../middleware/isLoggedOut');
-const methodOverride = require('method-override');
-const { User, Article } = require('../models');
-
-// Enable method override
-router.use(methodOverride('_method'));
+const { user } = require('../models');
 
 // GET /profile - Display the profile page
 router.get('/', isLoggedIn, async (req, res) => {
@@ -84,6 +80,27 @@ router.post('/profile', isLoggedIn, async (req, res) => {
 });
 
 // PUT /profile/update/:id - Update the user's profile
+/* router.put('/:id', isLoggedIn, async (req, res) => {
+    const putUserProfile = { ...req.user };
+
+    putUserProfile.active = false;
+
+    user.update(putUserProfile, {
+        where: { id: req.params.id }
+
+    })
+        .then(() => {
+            req.logOut(function (err, next) {
+                if (err) { return next(err); }
+                req.flash('success', 'Logging out... See you next time!');
+                res.redirect('/');
+            });
+        })
+        .catch((error) => {
+            res.status(500).send('Internal Server Error');
+        });
+}); */
+
 router.put('/update/:id', isLoggedIn, async (req, res) => {
     try {
         const { id } = req.params;
@@ -91,10 +108,12 @@ router.put('/update/:id', isLoggedIn, async (req, res) => {
         const { name, email, address, city, state, password } = req.body;
 
         // Update the user's profile in the database or any other data source
-        const user = await User.findByPk(id);
+        const user = await user.findByPk(id);
         if (!user) {
             return res.status(404).send('User not found');
         }
+
+        // Check if the user's account is active
         user.name = name;
         user.email = email;
         user.address = address;
@@ -118,7 +137,7 @@ router.delete('/profile', isLoggedIn, async (req, res) => {
         const userId = req.params.id;
 
         // Delete the user's profile from the database
-        await User.destroy({ where: { id: userId } });
+        await user.destroy({ where: { id: userId } });
 
         // Delete all saved articles associated with the user
         // await Article.destroy({ where: { userId } });
@@ -130,7 +149,5 @@ router.delete('/profile', isLoggedIn, async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
-
 
 module.exports = router;

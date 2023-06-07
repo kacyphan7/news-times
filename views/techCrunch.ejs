@@ -71,7 +71,11 @@
                             <a href="<%= techCrunches.url %>" class="card-link">Read More</a>
                             <hr>
                             <form action="/savedArticles/add" method="POST">
-                                <input type="hidden" name="techCrunchesId" value="<%= techCrunches.id %>">
+                                <input type="hidden" name="title" value="<%= techCrunches.title %>">
+                                <input type="hidden" name="author" value="<%= techCrunches.author %>">
+                                <input type="hidden" name="content" value="<%= techCrunches.content %>">
+                                <input type="hidden" name="description" value="<%= techCrunches.description %>">
+                                <input type="hidden" name="publishedAt" value="<%= techCrunches.publishedAt %>">
                                 <button type="submit" class="button is-black">Save</button>
                             </form>
                         </div>

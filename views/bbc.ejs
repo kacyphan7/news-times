@@ -55,7 +55,6 @@
                 </ul>
             </div>
 
-            <!-- body -->
             <div class="column is-8-desktop is-12-tablet">
                 <div class="content mt-2">
                     <h2 class="mb-4 has-text-weight-medium">Top Headlinesfrom BBC News</h2>
@@ -74,7 +73,11 @@
                             <a href="<%= bbcNews.url %>" class="card-link">Read More</a>
                             <hr>
                             <form action="/savedArticles/add" method="POST">
-                                <input type="hidden" name="bbcNewsId" value="<%= bbcNews.id %>">
+                                <input type="hidden" name="title" value="<%= bbcNews.title %>">
+                                <input type="hidden" name="author" value="<%= bbcNews.author %>">
+                                <input type="hidden" name="content" value="<%= bbcNews.content %>">
+                                <input type="hidden" name="description" value="<%= bbcNews.description %>">
+                                <input type="hidden" name="publishedAt" value="<%= bbcNews.publishedAt %>">
                                 <button type="submit" class="button is-black">Save</button>
                             </form>
                         </div>

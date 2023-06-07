@@ -2,30 +2,30 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class articles extends Model {
+  class article extends Model {
     static associate(models) {
       // define association here
     }
   }
 
-  articles.init(
+  article.init(
     {
       author: DataTypes.STRING,
       title: DataTypes.STRING,
       description: DataTypes.STRING,
       content: DataTypes.STRING,
-      publishedAt: DataTypes.DATE
+      publishedAt: DataTypes.STRING
     },
     {
       sequelize,
-      modelName: 'articles',
+      modelName: 'article',
     }
   );
 
   // Add a custom method to fetch all articles
-  articles.getAllArticles = async () => {
+  article.getAllArticles = async () => {
     try {
-      const allArticles = await articles.findAll();
+      const allArticles = await article.findAll();
       return allArticles;
     } catch (error) {
       throw new Error('Failed to fetch articles');
@@ -33,5 +33,5 @@ module.exports = (sequelize, DataTypes) => {
   };
 
 
-  return articles;
+  return article;
 };

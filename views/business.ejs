@@ -71,7 +71,11 @@
                             <a href="<%= businesses.url %>" class="card-link">Read More</a>
                             <hr>
                             <form action="/savedArticles/add" method="POST">
-                                <input type="hidden" name="businessesId" value="<%= businesses.id %>">
+                                <input type="hidden" name="title" value="<%= businesses.title %>">
+                                <input type="hidden" name="author" value="<%= businesses.author %>">
+                                <input type="hidden" name="content" value="<%= businesses.content %>">
+                                <input type="hidden" name="description" value="<%= businesses.description %>">
+                                <input type="hidden" name="publishedAt" value="<%= businesses.publishedAt %>">
                                 <button type="submit" class="button is-black">Save</button>
                             </form>
                         </div>

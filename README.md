@@ -5,6 +5,7 @@ News Times is a web application that allows users to browse and read news articl
 # Languages, Frameworks, & Libraries Used:
 
 ![Bulma](https://img.shields.io/badge/Bulma-00D1B2?style=for-the-badge&logo=Bulma&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -52,7 +53,13 @@ News Times is a web application that allows users to browse and read news articl
 
 ### Moblie Viiew
 
-![moblieView](public/assets/img/moblieFriendlyView.png)
+![moblieView](public/assets/img/moblieView.png)
+
+# HOW IT WORKS
+
+## API CALLS
+
+## Saved Articles 
 
 # Fundamentals
 Here are some key aspects and requirements of the News App:

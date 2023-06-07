@@ -38,7 +38,11 @@
                             <hr>
                             <!-- Save button -->
                             <form action="/savedArticles/add" method="POST">
-                                <input type="hidden" name="articleId" value="<%= article.id %>">
+                                <input type="hidden" name="title" value="<%= article.title %>">
+                                <input type="hidden" name="author" value="<%= article.author %>">
+                                <input type="hidden" name="content" value="<%= article.content %>">
+                                <input type="hidden" name="description" value="<%= article.description %>">
+                                <input type="hidden" name="publishedAt" value="<%= article.publishedAt %>">
                                 <button type="submit" class="button is-black">Save</button>
                             </form>
                         </div>

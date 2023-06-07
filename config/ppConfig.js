@@ -13,7 +13,7 @@ const STRATEGY = new LocalStrategy({
             where: { email }
         });
 
-        if (!foundUser || !foundUser.validPassword(password)) {
+        if (!foundUser || !foundUser.validPassword(password) || foundUser.active === false) {
             cb(null, false);     // if no user or invalid password, return false
         } else {
             cb(null, foundUser);

@@ -1,0 +1,715 @@
+    {
+      source: [Object],
+      author: 'Joe Rossignol',
+      title: 'These macOS Sonoma Features Are Not Available on Intel Macs',
+      description: 'Apple this week previewed macOS Sonoma, the latest version of its Mac operating system. Launching later this year, the software update includes several new features, but not all of them are available on Intel-based Macs, according to Apple.\n' +
+        '\n' +
+        '\n' +
+        '\n' +
+        '\n' +
+        '\n' +
+        'On the macOS …',
+      url: 'https://www.macrumors.com/2023/06/06/macos-sonoma-features-not-on-intel-macs/',
+      urlToImage: 'https://images.macrumors.com/t/jac_L3T0bl5P29Uu1W2hElWTQSw=/2585x/article-new/2023/06/macos-sonoma-feature-green-brown.jpg',
+      publishedAt: '2023-06-06T18:35:10Z',
+      content: 'Apple this week previewed macOS Sonoma, the latest version of its Mac operating system. Launching later this year, the software update includes several new features, but not all of them are available… [+1210 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Juli Clover',
+      title: 'Apple Vision Pro Supports Virtual Typing, Navigation Through Hand Gestures and Eye Movements',
+      description: "Rumors about Apple's Vision Pro headset have been circulating for years, but something that was never quite clear was how it would be controlled. There were some early rumors of control devices, which eventually faded away as leaks focused more on gesture con…",
+      url: 'https://www.macrumors.com/2023/06/06/apple-vision-pro-navigation-gestures/',
+      urlToImage: 'https://images.macrumors.com/t/k3Zb6WDWZlqLhTlsJ-_8R9Q8JMg=/1622x/article-new/2023/06/visionOS-Virtual-Keyboard.jpg',
+      publishedAt: '2023-06-06T20:43:45Z',
+      content: "Rumors about Apple's Vision Pro headset have been circulating for years, but something that was never quite clear was how it would be controlled. There were some early rumors of control devices, whic… [+1340 chars]"
+    },
+    {
+      source: [Object],
+      author: 'Joe Rossignol',
+      title: "Apple Vision Pro Testers Share Impressions: 'By Far the Best Headset'",
+      description: 'Apple on Monday unveiled the Vision Pro, its long-awaited AR/VR headset. While the headset is not launching until early next year, some media outlets and YouTubers received a 30-minute guided demo of the device and shared their first impressions. The testers …',
+      url: 'https://www.macrumors.com/2023/06/06/apple-vision-pro-first-impressions/',
+      urlToImage: 'https://images.macrumors.com/t/I55gBLWK0Trxh_VWrZmLbW80ZYI=/1600x/article-new/2023/06/Apple-Vision-Pro-at-Steve-Jobs-Theater.jpeg',
+      publishedAt: '2023-06-06T15:19:37Z',
+      content: 'Apple on Monday unveiled the Vision Pro, its long-awaited AR/VR headset. While the headset is not launching until early next year, some media outlets and YouTubers received a 30-minute guided demo of… [+2002 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Tim Hardwick',
+      title: 'iOS 17 Tidbits: Enhanced Siri Suggestions, Multiple Timers, Recipe Visual Look Up, and More',
+      description: "With the release of the first iOS 17 beta in the hands of developers, early adopters continue to discover smaller changes in the new version of Apple's mobile operating system. Below are some of the more notable differences that have come to light since Monda…",
+      url: 'https://www.macrumors.com/2023/06/06/ios-17-tidbits-whats-new/',
+      urlToImage: 'https://images.macrumors.com/t/F7oTqlQN4Z9JS9HdjKPoRgxasG0=/2250x/article-new/2023/06/General-iOS-17-Feature-Blue-Green.jpg',
+      publishedAt: '2023-06-06T16:29:34Z',
+      content: "With the release of the first iOS 17 beta in the hands of developers, early adopters continue to discover smaller changes in the new version of Apple's mobile operating system. Below are some of the … [+2888 chars]"
+    },
+    {
+      source: [Object],
+      author: 'Joe Rossignol',
+      title: 'iPhone Features Interactive Widgets Starting With iOS 17',
+      description: 'Starting with iOS 17, interactive widgets are now available on the iPhone across the Home Screen, Lock Screen, and the new StandBy mode. Apple gave some examples of what interactive widgets can be used for, including marking a reminder as completed, playing o…',
+      url: 'https://www.macrumors.com/2023/06/05/ios-17-interactive-widgets/',
+      urlToImage: 'https://images.macrumors.com/t/GxvCay0XkWVigVGbb8G2kLzkNqk=/1600x/article-new/2023/06/iOS-17-Interactive-Widgets.jpeg',
+      publishedAt: '2023-06-06T00:41:40Z',
+      content: 'Starting with iOS 17, interactive widgets are now available on the iPhone across the Home Screen, Lock Screen, and the new StandBy mode. Apple gave some examples of what interactive widgets can be us… [+893 chars]'
+    },
+    {
+      source: [Object],
+      author: 'msmash',
+      title: 'Apple Buys AR Headset Startup Mira',
+      description: "Apple has acquired Mira, a Los Angeles-based AR startup that makes headsets for other companies and the US military, according to a post from the CEO's private Instagram account yesterday seen by The Verge and a person familiar with the matter. Apple confirme…",
+      url: 'https://apple.slashdot.org/story/23/06/06/1849259/apple-buys-ar-headset-startup-mira',
+      urlToImage: 'https://a.fsdn.com/sd/topics/apple_64.png',
+      publishedAt: '2023-06-06T19:20:00Z',
+      content: 'If all else fails, immortality can always be assured by spectacular error.\r\n' +
+        '-- John Kenneth Galbraith'
+    },
+    {
+      source: [Object],
+      author: 'msmash',
+      title: 'Apple Accidentally Releases iOS 17 Developer Beta To the Public',
+      description: 'Apple is supposed to release an iOS 17 public beta in July, but the company inadvertently gave users an early peek. From a report: As AppleInsider explains, Connor Jewiss and other users have noticed that the iOS 17 developer beta was available to install in …',
+      url: 'https://apple.slashdot.org/story/23/06/06/1653244/apple-accidentally-releases-ios-17-developer-beta-to-the-public',
+      urlToImage: 'https://a.fsdn.com/sd/topics/ios_64.png',
+      publishedAt: '2023-06-06T16:53:00Z',
+      content: 'As AppleInsider explains, Connor Jewiss and other users have noticed that the iOS 17 developer beta was available to install in the Beta Updates section of Settings whether or not you paid for the ne… [+618 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Hasan Chowdhury',
+      title: "Apple didn't mention the metaverse once",
+      description: 'Apple has finally unveiled the Vision Pro, its new, expensive mixed-reality headset. There was no talk of the metaverse.',
+      url: 'https://www.businessinsider.com/apple-headset-no-mention-metaverse-once-2023-6',
+      urlToImage: 'https://i.insider.com/647f35e240bf000019fa5113?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T13:42:09Z',
+      content: 'Apple did not describe the Vision Pro as a metaverse device.Apple\r\n' +
+        '<ul>\n' +
+        "<li>Apple's mixed-reality headset is finally here, but it isn't talking about the metaverse.</li>\n" +
+        '<li>Tim Cook unveiled the Vis… [+3606 chars]'
+    },
+    {
+      source: [Object],
+      author: "Lara O'Reilly",
+      title: '10 Things in Tech: Hello, Apple Vision Pro',
+      description: "In today's edition: Apple unveils $3,499 Vision Pro, Disney develops content for Apple's headset, and Linda Yaccarino starts as Twitter CEO.",
+      url: 'https://www.businessinsider.com/10-things-in-tech-apples-vision-pro-linda-yaccarino-twitter-ceo-2023-6',
+      urlToImage: 'https://i.insider.com/647ebb9440bf000019fa4a64?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T09:48:58Z',
+      content: "Hello, readers. Lara O'Reilly, a senior correspondent on the advertising team in London, here.The Nerd Helmet, as coined by The Wall Street Journal's Joanna Stern, has arrived! Apple on Monday unveil… [+5054 chars]"
+    },
+    {
+      source: [Object],
+      author: 'Thomas Maxwell',
+      title: 'Apple just unveiled its $3,499 Vision Pro headset. Here are some of the coolest things it can do.',
+      description: 'Apple unveiled its mixed-reality headset on Monday at its WWDC conference. These are some of its most interesting features.',
+      url: 'https://www.businessinsider.com/apple-vision-pro-features-headset-wwdc-2023-6',
+      urlToImage: 'https://i.insider.com/647e438fa52c4b001936aea9?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T09:33:53Z',
+      content: 'Apple Vision Pro.Apple\r\n' +
+        '<ul>\n' +
+        '<li>Apple held its annual WWDC keynote Monday, where it unveiled its futuristic headset computer. </li>\n' +
+        "<li>Called the Vision Pro, the $3,499 headset is Apple's vision fo… [+8172 chars]"
+    },
+    {
+      source: [Object],
+      author: 'Pete Syme',
+      title: 'Apple demoed one of its new features by displaying a downright weird message about finding a bunch of raccoons hidden in a basement',
+      description: 'Apple unveiled a "Live Voicemail" feature using an attention-grabbing demo of a man about to bathe a family of raccoons he discovered in a basement.',
+      url: 'https://www.businessinsider.com/apple-displays-weird-message-about-basement-raccoons-to-demo-feature-2023-6',
+      urlToImage: 'https://i.insider.com/647f1dc840bf000019fa4f18?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T12:19:28Z',
+      content: 'One of these is not like the others.Courtesy of Apple\r\n' +
+        '<ul>\n' +
+        '<li>Apple unveiled a bunch of new features at its WWDC on Monday.</li>\n' +
+        '<li>That included "Live Voicemail" which delivers a transcript so us… [+1963 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Grace Mayer',
+      title: "12 photos that show off all the cool features of Apple's new Vision Pro headset",
+      description: "Apple just unveiled its long-anticipated mixed-reality headset Vision Pro at its annual developers conference. Here's a look at some of its features.",
+      url: 'https://www.businessinsider.com/photos-reveal-features-of-apple-vision-pro-headset-2023-6',
+      urlToImage: 'https://i.insider.com/647e4f02a52c4b001936b181?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T13:17:50Z',
+      content: "Take a look at some of Apple's features for its new headset Vision Pro.Apple\r\n" +
+        '<ul>\n' +
+        '<li>Apple held its annual Worldwide Developers Conference on Monday.</li>\n' +
+        '<li>The company announced its hotly-antici… [+3412 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Julie Bort',
+      title: "3 reasons why Tim Cook could create a multibillion-dollar entertainment industry with Apple's new headset",
+      description: "Apple has three superpowers that make it uniquely able to succeed in mixed reality for consumers, and I'm hoping that it does.",
+      url: 'https://www.businessinsider.com/why-apple-vision-pro-headset-could-succeed-2023-6',
+      urlToImage: 'https://i.insider.com/647e43e1a52c4b001936aeec?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T09:00:06Z',
+      content: 'Apple Vision Pro Disney contentInsider/Apple Event\r\n' +
+        '<ul>\n' +
+        '<li>Apple showed off its cutting edge, $3,500 mixed-reality headset on Monday.</li>\n' +
+        '<li>Many a pundit will look at the price and predict its d… [+3907 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Beatrice Nolan',
+      title: "Apple's new iOS 17 will warn you if someone tries to send unsolicited nudes",
+      description: 'Apple said in a press release that the Sensitive Content Warning would help adult users avoid "unwanted nude images and videos."',
+      url: 'https://www.businessinsider.com/apple-ios-17-unsolicited-nudes-sensitive-content-warning-2023-6',
+      urlToImage: 'https://i.insider.com/647f1c96a52c4b001936b94c?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T12:25:42Z',
+      content: 'Apple CEO Tim Cook speaks before the start of the Apple Worldwide Developers Conference at its headquarters on June 05, 2023 in Cupertino, California.Justin Sullivan/Getty Images\r\n' +
+        '<ul>\n' +
+        "<li>Apple's ne… [+1994 chars]"
+    },
+    {
+      source: [Object],
+      author: 'Grace Mayer',
+      title: "People who were whisked away in golf carts to try out Apple's $3,500 headset are calling it 'magic' that is 'still searching for a purpose'",
+      description: 'After Apple announced its Vision Pro headset at its WWDC event, some attendees got to try out the new headset. Here are their first impressions.',
+      url: 'https://www.businessinsider.com/apple-vision-pro-early-hands-on-reviews-2023-6',
+      urlToImage: 'https://i.insider.com/647f5a4240bf000019fa59cc?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T17:45:32Z',
+      content: 'The high-end technology within the expensive Apple Vision Pro was widely praised.Apple\r\n' +
+        '<ul>\n' +
+        '<li>Apple announced its Vision Pro headset at its annual Worldwide Developers Conference yesterday.</li>\n' +
+        '<… [+4746 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Steven Cohen',
+      title: "MacBook Air 15-inch vs 13-inch models: Here's how Apple's most popular laptops stack up",
+      description: "Apple sells three different MacBook Air laptop models, including a brand-new 15-inch edition with the company's M2 processor. Here's how they compare.",
+      url: 'https://www.businessinsider.com/guides/tech/macbook-air-15-inch-vs-13-inch-laptop',
+      urlToImage: 'https://i.insider.com/647e49cda52c4b001936b062?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T19:53:51Z',
+      content: "When you buy through our links, Insider may earn an affiliate commission. Learn more.Apple's MacBook Air lineup features three models, including 15- and 13-inch editions.Apple\r\n" +
+        "Apple's MacBook Air li… [+6106 chars]"
+    },
+    {
+      source: [Object],
+      author: 'Cadie Thompson',
+      title: "Why Steve Jobs would love Apple's Vision Pro headset",
+      description: "Steve Jobs biographer Walter Isaacson argued that the late Apple CEO and cofounder would be a fan of the company's new Vision Pro headset.",
+      url: 'https://www.businessinsider.com/what-steve-jobs-would-think-apple-vision-pro-headset-biographer-2023-6',
+      urlToImage: 'https://i.insider.com/647f7dfa0821fb00181034fd?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T19:13:03Z',
+      content: 'Steve Jobs died in October of 2011.Justin Sullivan / Staff / Getty Images\r\n' +
+        '<ul>\n' +
+        '<li>Walter Isaacson wrote the biography "Steve Jobs," chronicling the life of the late Apple cofounder.</li>\n' +
+        '<li>Isaacs… [+2500 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Alistair Barr',
+      title: "Why are there no photos of Tim Cook and other Apple executives wearing the company's Vision Pro headset?",
+      description: "Tim Cook may want to avoid the ridicule that Mark Zuckerberg has faced when he repeatedly wore Meta's VR headsets.",
+      url: 'https://www.businessinsider.com/no-photos-tim-cook-apple-executives-wearing-vision-pro-headset-2023-6',
+      urlToImage: 'https://i.insider.com/647ecb2640bf000019fa4ac6?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T10:00:06Z',
+      content: 'A model wearing the Vision Pro headsetApple\r\n' +
+        '<ul>\n' +
+        '<li>Top Apple reporter Mark Gurman noted there are no photos of Tim Cook wearing the Vision Pro headset.</li>\n' +
+        '<li>The Apple CEO may want to avoid the… [+2325 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Michael Gartenberg',
+      title: "Apple's new Vision Pro is amazing, but there's no good reason to buy it, and lots of reasons not to",
+      description: "Apple's AR/VR gadget is a big gamble with a fatal flaw, columnist Michael Gartenberg argues.",
+      url: 'https://www.businessinsider.com/no-good-reason-to-buy-apple-ar-rvision-pro-2023-6',
+      urlToImage: 'https://i.insider.com/647f7ade0821fb001810344f?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T19:02:16Z',
+      content: 'Apple Vision ProApple\r\n' +
+        '<ul><li>Apple has chosen AR/VR as the next big area to pursue with its new Vision Pro glasses.</li><li>This is a big gamble with a fatal flaw, columnist Michael Gartenberg argu… [+5033 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Erica Star Domena',
+      title: "What can Apple's new VR headset do?",
+      description: "Apple CEO Tim Cook introduced a $3,499 virtual-reality headset at the annual developer conference. Tech analysts are optimistic about the product's future but the internet mocked its look and hefty price.",
+      url: 'https://www.businessinsider.com/what-can-apples-new-vr-headset-do-2023-6',
+      urlToImage: 'https://i.insider.com/647f70293973bf001961c578?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T17:49:52Z',
+      content: "Apple CEO Tim Cook introduced the $3,499 virtual-reality headset at the annual developer conference. Tech analysts are optimistic about the product's future but the internet mocked its look and hefty… [+51 chars]"
+    },
+    {
+      source: [Object],
+      author: 'Alistair Barr',
+      title: "iPod godfather says Apple 'jumped the shark' with its Vision Pro headset",
+      description: "Tony Fadell, known as the iPod godfather, was impressed with Apple's new hardware, but dunked on the apps, pricing, and marketing for the device.",
+      url: 'https://www.businessinsider.com/ipod-godfather-fadell-apple-jumped-the-shark-vision-pro-headset-2023-6',
+      urlToImage: 'https://i.insider.com/647f7dcb0821fb00181034ef?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T18:41:40Z',
+      content: 'A great white shark jumping out of the water.Gerard Lacz/VW Pics /Universal Images Group via Getty Images\r\n' +
+        '<ul>\n' +
+        '<li>Tony Fadell created the iPod and was instrumental in the creation of the iPhone.</l… [+1702 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Alistair Barr',
+      title: 'Apple CEO Tim Cook says he uses ChatGPT and is excited about the chatbot',
+      description: "Tim Cook was interviewed on Good Morning America and he was asked about OpenAI's viral ChatGPT service.",
+      url: 'https://www.businessinsider.com/apple-ceo-tim-cook-uses-chatgpt-excited-about-chatbot-2023-6',
+      urlToImage: 'https://i.insider.com/647f526c9fcce60019359294?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T15:46:19Z',
+      content: 'Tim Cook visits an Apple store in New York City.Kevin Mazur/Getty Images\r\n' +
+        '<ul>\n' +
+        "<li>Tim Cook didn't blink when the CEO was asked whether he uses ChatGPT.</li>\n" +
+        "<li>Apple has restricted employees' use o… [+2283 chars]"
+    },
+    {
+      source: [Object],
+      author: 'Alistair Barr',
+      title: "No Tim Cook, the Apple Vision Pro headset does not cost '$34.99'",
+      description: "Tim Cook was asked on Good Morning America how much the Vision Pro headset costs. He said 'thirty-four, ninety-nine.' Robin Roberts corrected him.",
+      url: 'https://www.businessinsider.com/apple-tim-cook-questioned-about-vision-pro-headset-price-2023-6',
+      urlToImage: 'https://i.insider.com/647f5f850821fb0018102e0c?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T16:50:26Z',
+      content: 'Apple CEO Tim CookREUTERS/Edgar Su\r\n' +
+        '<ul>\n' +
+        '<li>Apple charges high prices for its capable devices. </li>\n' +
+        "<li>Still, the cost of the new Vision Pro headset is taking people's breathe away. </li>\n" +
+        '<li>Tim … [+1256 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Ashley Rodriguez',
+      title: "Disney is developing ways to watch sports with Apple's Vision Pro that could give fans new control over the action",
+      description: "At Apple's Worldwide Developers Conference Monday, Disney gave a glimpse into how VR could change the sports fan experience, from court-side views to stats.",
+      url: 'https://www.businessinsider.com/disney-espn-apple-vision-pro-developing-new-ways-watch-sports-2023-6',
+      urlToImage: 'https://i.insider.com/647e5e6140bf000019fa48ba?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T09:00:06Z',
+      content: "Disney is developing new sports-viewing experiences for Apple's upcoming Vision Pro headset.Apple.\r\n" +
+        '<ul>\n' +
+        '<li>Disney outlined its vision Monday for how virtual reality could change the way we watch sp… [+2757 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Vartika Puranik',
+      title: "I make $169,000 a year and these are the 7 things I'll keep splurging on even during an economic slump",
+      description: "This millennial has a six-figure salary and said video games and coffee are just a couple of the recession-proof items she'd never cut back on.",
+      url: 'https://www.businessinsider.com/recession-proof-spending-millennial-money-salary-how-to-spend-2023-6',
+      urlToImage: 'https://i.insider.com/6470f89d085acb0018feb35e?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T09:00:05Z',
+      content: 'Elissa Voris.Courtesy of Elissa Voris\r\n' +
+        '<ul>\n' +
+        '<li>Elissa Voris is a senior manager of cloud media solutions engineering at Dolby.</li>\n' +
+        '<li>Voris earns enough income to pay her bills and have extra mone… [+5883 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Filip De Mott',
+      title: "AI bullishness may be setting the stock market up for a 'Mother of All Melt-ups,' Yardeni Research says",
+      description: '"Now that the latest fiscal cliff has been averted, is another MAMU underway led by stocks that are AI frenzy plays? Maybe," Ed Yardeni wrote.',
+      url: 'https://markets.businessinsider.com/news/stocks/artificial-intelligence-ai-investing-bull-market-meltup-yardeni-tech-stocks-2023-6',
+      urlToImage: 'https://i.insider.com/647f49589fcce600193590ae?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T16:33:56Z',
+      content: 'Ed Yardeni.Brendan McDermid/Reuters\r\n' +
+        '<ul>\n' +
+        '<li>A massive melt-up may be occurring as investors pile into AI-related stocks, Ed Yardeni wrote.</li>\n' +
+        '<li>Such "Mother of All Melt-ups" tend to occur come … [+1860 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Nidhi Pandurangi',
+      title: "Media mogul Martha Stewart isn't a fan of remote work: 'You can't possibly get everything done working three days a week in the office and two days remotely'",
+      description: `"Should America go down the drain because people don't want to go back to work?" she told Footwear News in an interview published on Monday.`,
+      url: 'https://www.businessinsider.com/return-to-office-remote-work-employees-martha-stewart-against-2023-6',
+      urlToImage: 'https://i.insider.com/60a3d2a9f27b4c001944509c?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T05:18:27Z',
+      content: 'Martha Stewart clapped back at the New York Post after they said she only owned 16 peacocks.Matt Winkelmeyer/Getty Images\r\n' +
+        '<ul>\n' +
+        '<li>Domestic goddess Martha Stewart is jumping on the anti-remote work … [+2954 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Vishal Persaud',
+      title: '3 California universities are in the top 10 for churning out startup founders who have gotten funding since 2022',
+      description: 'Stanford, UCLA and USC rank among the top 10 schools with graduates who have gotten private funding for their startups since the beginning of 2022.',
+      url: 'https://www.businessinsider.com/california-colleges-startup-founder-graduates-stanford-usc-ucla-2023-6',
+      urlToImage: 'https://i.insider.com/587f8316f10a9a98468b85cb?width=1200&format=jpeg',
+      publishedAt: '2023-06-06T13:35:43Z',
+      content: 'Stanford, UCLA and USC are in the top 10 schools with grads who have gotten private startup funding.Justin Sullivan/Getty Images\r\n' +
+        '<ul>\n' +
+        '<li>Stanford, UCLA and USC are in the top 10 schools with grads … [+2617 chars]'
+    },
+    {
+      source: [Object],
+      author: 'hello@smashingmagazine.com (Yuliia Nikitina)',
+      title: 'Exploring Universal And Cognitive-Friendly UX Design Through Pivot Tables And Grids',
+      description: 'This article covers the best tips and recommendations on the elements to pay attention to, the rules to follow, and life hacks to get around certain difficulties in table design.',
+      url: 'https://www.smashingmagazine.com/2023/06/universal-cognitive-friendly-ux-design-tables-grids/',
+      urlToImage: 'https://files.smashing.media/articles/universal-cognitive-friendly-ux-design-tables-grids/universal-cognitive-friendly-ux-design-tables-grids.jpg',
+      publishedAt: '2023-06-06T16:30:00Z',
+      content: 'Tables are one of the most popular ways to visualize data. Presenting data in tables is so ubiquitous — and core to the web itself — that I doubt many of you reading this have any trouble with the ba… [+37103 chars]'
+    },
+    {
+      source: [Object],
+      author: null,
+      title: 'WWDC 2023: Vision Pro, New Mac Pro With Apple Silicon, IOS 17 & All Big Announcements Apple Made - India Today',
+      description: '<ol><li>WWDC 2023: Vision Pro, New Mac Pro With Apple Silicon, IOS 17 & All Big Announcements Apple Made  India Today\r\n' +
+        '</li><li>The top five announcements from WWDC 2023  MobileSyrup\r\n' +
+        '</li><li>Here are 17 Big Things Announced at WWDC [VIDEO] • iPhone in Canad…',
+      url: 'https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CCAiC2J0azdMb0o5XzhZmAEB?oc%3D5&gl=FR&hl=en-US&cm=2&pc=n&src=1',
+      urlToImage: null,
+      publishedAt: '2023-06-06T06:38:10Z',
+      content: 'We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]'
+    },
+    {
+      source: [Object],
+      author: null,
+      title: 'Apple Vision Pro headset could pave way for mass adoption of AR, VR: Industry - CP24',
+      description: '<ol><li>Apple Vision Pro headset could pave way for mass adoption of AR, VR: Industry  CP24\r\n' +
+        "</li><li>Mixed reactions to Apple's Vision Pro VR goggles  CTV News\r\n" +
+        "</li><li>Tim Cook says $3499 USD Vision Pro is 'great value'  MobileSyrup\r\n" +
+        '</li><li>Apple unveils…',
+      url: 'https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMidGh0dHBzOi8vd3d3LmNwMjQuY29tL2xpZmVzdHlsZS9hcHBsZS12aXNpb24tcHJvLWhlYWRzZXQtY291bGQtcGF2ZS13YXktZm9yLW1hc3MtYWRvcHRpb24tb2YtYXItdnItaW5kdXN0cnktMS42NDMwMjAw0gEA?oc%3D5&gl=FR&hl=en-US&cm=2&pc=n&src=1',
+      urlToImage: null,
+      publishedAt: '2023-06-06T22:49:01Z',
+      content: 'We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]'
+    },
+    {
+      source: [Object],
+      author: null,
+      title: 'Apple Vision Pro headset could pave way for mass adoption of AR, VR: Cdn. tech firms - Coast Reporter',
+      description: '<ol><li>Apple Vision Pro headset could pave way for mass adoption of AR, VR: Cdn. tech firms  Coast Reporter\r\n' +
+        "</li><li>Opinion | Apple’s Vision Pro 'mixed-reality' headset goggles are clunky. Good.  The Washington Post\r\n" +
+        "</li><li>Apple's Vision Pro is an impre…",
+      url: 'https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMif2h0dHBzOi8vd3d3LmNvYXN0cmVwb3J0ZXIubmV0L3RoZS1taXgvYXBwbGUtdmlzaW9uLXByby1oZWFkc2V0LWNvdWxkLXBhdmUtd2F5LWZvci1tYXNzLWFkb3B0aW9uLW9mLWFyLXZyLWNkbi10ZWNoLWZpcm1zLTcxMDQ2NjTSAQA?oc%3D5&gl=FR&hl=en-US&cm=2&pc=n&src=1',
+      urlToImage: null,
+      publishedAt: '2023-06-06T17:37:21Z',
+      content: 'We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Zack Zwiezen',
+      title: 'All The Things You Could Buy For The Price Of Apple’s $3,500 VR Headset',
+      description: 'On June 5, after months of rumors and leaks, Apple officially unveiled its new virtual reality / augmented reality headset. It’s called the Vision Pro and it features some really nifty features powered by advanced tech. It’s out “early next year” and will cos…',
+      url: 'https://kotaku.com/apple-vr-headset-vision-pro-price-mixed-reality-mac-ps5-1850510461',
+      urlToImage: 'https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/6ffdc0319f9aede52e136307fe26ac8e.jpg',
+      publishedAt: '2023-06-06T17:35:00Z',
+      content: 'On June 5, after months of rumors and leaks, Apple officially unveiled its new virtual reality / augmented reality headset. Its called the Vision Pro and it features some really nifty features powere… [+1022 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Rachel Kaser',
+      title: 'Apple Arcade adds Jet Dragon, soccer games in June',
+      description: 'Apple Arcade has revealed which games are coming to the service in June, including Jet Dragon, Retro Bowl+ and Bold Moves+.',
+      url: 'https://venturebeat.com/games/apple-arcade-adds-jet-dragon-soccer-games-in-june/',
+      urlToImage: 'https://venturebeat.com/wp-content/uploads/2023/06/Jet-Dragon_Key-Art_1200x675.png?w=1200&strip=all',
+      publishedAt: '2023-06-06T20:21:11Z',
+      content: "Missed the GamesBeat Summit excitement? Don't worry! Tune in now to catch all of the live and virtual sessions here.\r\n" +
+        'Apple announced today which games are coming to its Arcade gaming platform in the… [+2000 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Luis Miranda',
+      title: 'El nuevo Mac Pro con M2 Ultra marca el fin de la era Intel',
+      description: 'El anuncio del Mac Pro con M2 Ultra ha sido uno de los más sorprendentes de la WWDC. Tras el éxito cosechado con el Mac Studio, los de Cupertino han recuperado el terreno perdido en el campo profesional. De igual modo, la actualización del potente ordenador d…',
+      url: 'http://hipertextual.com/2023/06/nuevo-mac-pro-apple-dice-adios-intel',
+      urlToImage: 'https://imgs.hipertextual.com/wp-content/uploads/2023/06/Apple-WWDC23-Mac-Family-Apple-Silicon-230605.jpg',
+      publishedAt: '2023-06-06T01:31:37Z',
+      content: 'El anuncio del Mac Pro con M2 Ultra ha sido uno de los más sorprendentes de la WWDC. Tras el éxito cosechado con el Mac Studio, los de Cupertino han recuperado el terreno perdido en el campo profesio… [+3453 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Tomás Rivero',
+      title: 'Cómo descargar iOS 17, iPadOS 17, watchOS 10 y macOS Sonoma',
+      description: 'Tras mucho esperar, Apple finalmente ha celebrado su WWDC 2023, lugar donde han presentado todas las novedades de software que estarán por llegar próximamente. Si quieres saber cómo probar desde ya mismo las versiones beta de iOS 17, iPadOS 17, watchOS 10 y m…',
+      url: 'http://hipertextual.com/2023/06/como-descargar-ios-17-ipados-17-watchos-10-macos-sonoma',
+      urlToImage: 'https://imgs.hipertextual.com/wp-content/uploads/2023/03/ios-17.jpg',
+      publishedAt: '2023-06-06T08:30:04Z',
+      content: 'Tras mucho esperar, Apple finalmente ha celebrado su WWDC 2023, lugar donde han presentado todas las novedades de software que estarán por llegar próximamente. Si quieres saber cómo probar desde ya m… [+4046 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Nolan Rada Galindo',
+      title: 'El creador de ‘Black Mirror’ usó ChatGPT para escribir un guion y el resultado fue lamentable',
+      description: 'La franquicia Black Mirror es reconocida por recrear, a través de sus temporadas, escenarios críticos en relación con la sociedad contemporánea y la tecnología. Con base en estos aspectos, los capítulos de cada entrega sirven como disparadores para tocar múlt…',
+      url: 'http://hipertextual.com/2023/06/charlie-brooker-chatgpt-black-mirror-guion-reaccion',
+      urlToImage: 'https://imgs.hipertextual.com/wp-content/uploads/2023/05/Black-Mirror-sexta-temporada-scaled.jpeg',
+      publishedAt: '2023-06-06T17:13:44Z',
+      content: 'La franquicia Black Mirror es reconocida por recrear, a través de sus temporadas, escenarios críticos en relación con la sociedad contemporánea y la tecnología. Con base en estos aspectos, los capítu… [+3410 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Rubén Chicharro',
+      title: '10 cosas de las Apple Vision Pro que Apple no mostró en la presentación',
+      description: 'Las Apple Vision Pro son, sin duda, uno de los productos más revolucionarios del mercado por sus prestaciones tan diferentes a cualquier otro visor de realidad virtual y realidad aumentada. Apple las anunció oficialmente durante la WWDC de 2023, donde mostrar…',
+      url: 'http://hipertextual.com/2023/06/apple-vision-pro-10-cosas-que-apple-no-mostro-en-la-presentacion',
+      urlToImage: 'https://imgs.hipertextual.com/wp-content/uploads/2023/06/DSC06380-scaled.jpg',
+      publishedAt: '2023-06-06T14:56:26Z',
+      content: 'Las Apple Vision Pro son, sin duda, uno de los productos más revolucionarios del mercado por sus prestaciones tan diferentes a cualquier otro visor de realidad virtual y realidad aumentada. Apple las… [+4395 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Ebenizer Pinedo',
+      title: 'Apple compra Mira, una empresa especializada en realidad aumentada, para impulsar el Apple Vision Pro',
+      description: 'Como parte de sus esfuerzos para seguir desarrollando el recién presentado Apple Vision Pro, los de Cupertino compraron Mira, una startup estadounidense especializada en hardware de realidad aumentada. Aunque esta importante adquisición no fue anunciada duran…',
+      url: 'http://hipertextual.com/2023/06/apple-compra-mira-realidad-aumentada',
+      urlToImage: 'https://imgs.hipertextual.com/wp-content/uploads/2023/06/apple-compra-mira.jpg',
+      publishedAt: '2023-06-06T19:33:50Z',
+      content: 'Como parte de sus esfuerzos para seguir desarrollando el recién presentadoApple Vision Pro, los de Cupertino compraron Mira, una startup estadounidense especializada en hardware de realidad aumentada… [+3296 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Gabriel Erard',
+      title: '¿Son las Apple Vision Pro compatibles con gafas graduadas?',
+      description: 'Las Apple Vision Pro están en boca de todos tras su presentación en la keynote inaugural de la WWDC 2023. Las gafas de realidad aumentada de los californianos llegarán al mercado recién a comienzos del próximo año y costarán nada menos que 3.499 dólares. Adem…',
+      url: 'http://hipertextual.com/2023/06/apple-vision-pro-gafas-graduadas',
+      urlToImage: 'https://imgs.hipertextual.com/wp-content/uploads/2023/06/DSC06392-scaled.jpg',
+      publishedAt: '2023-06-06T12:44:25Z',
+      content: 'Las Apple Vision Pro están en boca de todos tras su presentación en la keynote inaugural de la WWDC 2023. Las gafas de realidad aumentada de los californianos llegarán al mercado recién a comienzos d… [+3227 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Ebenizer Pinedo',
+      title: 'Las betas de Apple para desarrolladores ahora son completamente gratuitas',
+      description: 'Anteriormente, si querías descargar la versión beta para desarrollares de un determinado software de Apple, sí o sí debías pertenecer al Developer Program, el cual tiene un costo de $99 dólares al año. Sin embargo, con la llegada de iOS 17, iPadOS 17, WatchOS…',
+      url: 'http://hipertextual.com/2023/06/apple-beta-desarrolladores-ahora-son-completamente-gratuitas',
+      urlToImage: 'https://imgs.hipertextual.com/wp-content/uploads/2023/06/apple-developer.jpeg',
+      publishedAt: '2023-06-06T21:56:49Z',
+      content: 'Anteriormente, si querías descargar la versión beta para desarrollares de un determinado software de Apple, sí o sí debías pertenecer al Developer Program, el cual tiene un costo de $99 dólares al añ… [+2928 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Gabriel Erard',
+      title: 'Apple nunca habló de ‘VR’ o ‘realidad mixta’. Así es como quiere definir las Vision Pro',
+      description: 'El anuncio de las Apple Vision Pro sigue dando de qué hablar, y existen motivos de sobra para ello. Entre los puntos más curiosos de su lanzamiento es que Apple ha evitado referirse a ellas estrictamente como un producto de realidad virtual o realidad aumenta…',
+      url: 'http://hipertextual.com/2023/06/apple-vision-pro-computacion-espacial',
+      urlToImage: 'https://imgs.hipertextual.com/wp-content/uploads/2023/06/Apple-WWCD23-Vision-Pro-lifestyle-with-battery-FaceTime-230605-1.jpg',
+      publishedAt: '2023-06-06T16:31:48Z',
+      content: 'El anuncio de las Apple Vision Pro sigue dando de qué hablar, y existen motivos de sobra para ello. Entre los puntos más curiosos de su lanzamiento es que Apple ha evitado referirse a ellas estrictam… [+5852 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Alberto Martín',
+      title: 'Si tienes uno de estos modelo de iPhone o iPad, malas noticias: no podrás instalar iOS 17',
+      description: 'iOS 17 ya es oficial. Y aunque todavía quedan algunos meses por delante hasta que estén disponibles para todos, ya puedes instalar la beta para desarrolladores. Como viene siendo habitual, junto con todas las novedades, Apple también ha anunciado los disposit…',
+      url: 'http://hipertextual.com/2023/06/dispositivos-compatibles-con-ios-17',
+      urlToImage: 'https://imgs.hipertextual.com/wp-content/uploads/2023/06/namedrop-ios-17.jpeg',
+      publishedAt: '2023-06-06T14:02:32Z',
+      content: 'iOS 17 ya es oficial. Y aunque todavía quedan algunos meses por delante hasta que estén disponibles para todos, ya puedes instalar la beta para desarrolladores. Como viene siendo habitual, junto con … [+3197 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Ebenizer Pinedo',
+      title: 'El Apple Vision Pro es capaz de capturar vídeos y fotos en 3D',
+      description: 'Tras la presentación oficial del Apple Vision Pro en la WWDC 2023, empiezan a surgir otros interesantes detalles sobre el próximo gran producto de la compañía; aquel que podría tomar el relevo del iPhone en el futuro. Ahora también sabemos que las cámaras y s…',
+      url: 'http://hipertextual.com/2023/06/apple-vision-pro-capturar-videos-fotos-3d',
+      urlToImage: 'https://imgs.hipertextual.com/wp-content/uploads/2023/06/apple-vision-pro.jpg',
+      publishedAt: '2023-06-06T18:39:38Z',
+      content: 'Tras la presentación oficial del Apple Vision Pro en la WWDC 2023, empiezan a surgir otros interesantes detalles sobre el próximo gran producto de la compañía; aquel que podría tomar el relevo del iP… [+3210 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Luis Miranda',
+      title: 'Apple muestra un emulador que puede ejecutar juegos de Windows en las Mac',
+      description: 'Apple nunca se ha caracterizado por ser una empresa que apueste en los videojuegos. Pese a que Steve Jobs presentó en su momento títulos del calibre de Doom 3 y Halo, la Mac está al final en la lista de plataformas para los desarrolladores. Eso podría cambiar…',
+      url: 'http://hipertextual.com/2023/06/apple-mac-emulador-directx-12-juegos-windows',
+      urlToImage: 'https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2023/06/games-mac.jpg?fit=1900%2C1072&quality=50&strip=all&ssl=1',
+      publishedAt: '2023-06-06T23:05:00Z',
+      content: 'Apple nunca se ha caracterizado por ser una empresa que apueste en los videojuegos. Pese a que Steve Jobs presentó en su momento títulos del calibre de Doom 3 y Halo, la Mac está al final en la lista… [+3439 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Rubén Chicharro',
+      title: '9 novedades de iOS 17 que Apple no mostró en la presentación',
+      description: 'iOS 17, la que será la nueva versión del sistema operativo para el iPhone, ya es oficial. Apple anunció durante la WWDC de 2023 las principales características de esta actualización, que llega con más opciones de personalización, una nueva forma de compartir …',
+      url: 'http://hipertextual.com/2023/06/9-novedades-de-ios-17-que-apple-no-mostro-en-la-presentacion',
+      urlToImage: 'https://imgs.hipertextual.com/wp-content/uploads/2023/06/apple-ios-17-scaled.jpg',
+      publishedAt: '2023-06-06T09:42:10Z',
+      content: 'iOS 17, la que será la nueva versión del sistema operativo para el iPhone, ya es oficial. Apple anunció durante la WWDC de 2023 las principales características de esta actualización, que llega con má… [+4781 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Tomás Rivero',
+      title: 'iOS 17: así puedes compartir la ubicación de tus AirTags con hasta cinco personas',
+      description: 'Hasta ahora, el uso de los AirTags de Apple era algo privado e individual. Solo el dueño de la etiqueta inteligente podía ver su ubicación desde su iPhone, iPad o Mac. No obstante, con la presentación de iOS 17 en la WWDC 2023, los de Cupertino han anunciado …',
+      url: 'http://hipertextual.com/2023/06/ios-17-asi-puedes-compartir-ubicacion-airtags-hasta-cinco-personas',
+      urlToImage: 'https://imgs.hipertextual.com/wp-content/uploads/2023/06/iOS-17-WWDC-2023.jpg',
+      publishedAt: '2023-06-06T11:52:01Z',
+      content: 'Hasta ahora, el uso de los AirTags de Apple era algo privado e individual. Solo el dueño de la etiqueta inteligente podía ver su ubicación desde su iPhone, iPad o Mac. No obstante, con la presentació… [+3458 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Tomás Rivero',
+      title: 'Descarga los nuevos wallpapers de iOS 17, iPadOS 17 y macOS Sonoma',
+      description: 'Con cada actualización importante de sus sistemas operativos móviles y de escritorio, Apple lanza nuevas colecciones de fondos de pantalla para definir su nueva generación de software. Aunque iOS 17, iPadOS 17 y macOS Sonoma no se han lanzado oficialmente, lo…',
+      url: 'http://hipertextual.com/2023/06/descarga-nuevos-wallpapers-ios-17-ipados-17-macos-sonoma',
+      urlToImage: 'https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2023/06/macos-sonoma.jpg?fit=2500%2C1607&quality=50&strip=all&ssl=1',
+      publishedAt: '2023-06-06T17:31:00Z',
+      content: 'Con cada actualización importante de sus sistemas operativos móviles y de escritorio, Apple lanza nuevas colecciones de fondos de pantalla para definir su nueva generación de software. Aunque iOS 17,… [+2663 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Cassie Morris',
+      title: '‘They were growing’: Woman claims her extreme digestive issues were caused by raw chia seeds in viral PSA',
+      description: `"This is so embarrassing ... You're supposed to do this before you eat them, and I did not know that."`,
+      url: 'https://www.intheknow.com/post/raw-chia-seeds-growing-tiktok-psa/',
+      urlToImage: 'https://media.zenfs.com/en/in_the_know_500/1abfd4a02c30a82cee8b3180c9b08169',
+      publishedAt: '2023-06-06T18:47:11Z',
+      content: 'After consuming 2 tablespoons of raw chia seeds every day, a woman claims she experienced horrible digestive issues and shes warning others not to make the same mistake.\r\n' +
+        'TikToker Jade Amber (@@jade.… [+4866 chars]'
+    },
+    {
+      source: [Object],
+      author: 'David Pescovitz',
+      title: 'Ducking finally, Apple eliminating its most annoying autocorrection',
+      description: `Yes, you can manually turn off the iOS autocorrect feature that annoyingly changes "fuck" to "duck" but now you won't have to bother. \n` +
+        '\n' +
+        '\n' +
+        '\n' +
+        `"In those moments where you just want to type a ducking word, well, the keyboard will learn it, too," Apple's head of sof…`,
+      url: 'https://boingboing.net/2023/06/06/ducking-finally-apple-eliminating-its-most-annoying-autocorrection.html',
+      urlToImage: 'https://i0.wp.com/boingboing.net/wp-content/uploads/2022/12/Screen-Shot-2022-12-13-at-10.46.27-PM.png?fit=1200%2C874&ssl=1',
+      publishedAt: '2023-06-06T15:57:58Z',
+      content: `Yes, you can manually turn off the iOS autocorrect feature that annoyingly changes "fuck" to "duck" but now you won't have to bother. \r\n` +
+        '"In those moments where you just want to type a ducking word, w… [+766 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Javier Lacort',
+      title: "Apple no pronunció 'Inteligencia Artificial' ni una vez en la presentación de las Vision Pro. Creemos saber por qué",
+      description: 'Dos horas y cinco minutos duró la keynote que inauguró la WWDC 2023 de Apple. En cero ocasiones se escuchó "Inteligencia Artificial" de la boca de Tim Cook, Craig Federighi ni ningún otro empleado de Apple de los que participaron en el evento. Justo en el mom…',
+      url: 'https://www.xataka.com/realidad-virtual-aumentada/apple-no-pronuncio-inteligencia-artificial-vez-presentacion-vision-pro-creemos-saber-que',
+      urlToImage: 'https://i.blogs.es/fc62e3/cleanshot-2023-06-06-at-12.56.49-2x/840_560.jpeg',
+      publishedAt: '2023-06-06T11:31:18Z',
+      content: 'Dos horas y cinco minutos duró la keynote que inauguró la WWDC 2023 de Apple. En cero ocasiones se escuchó "Inteligencia Artificial" de la boca de Tim Cook, Craig Federighi ni ningún otro empleado de… [+3843 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Javier Lacort',
+      title: 'Los auténticos ganadores de la WWDC son los fabricantes de accesorios para iPhone',
+      description: 'Kent Brockman dijo que los auténticos ganadores de la partida de tenis en casa de los Simpson eran los aperitivos de Marge, y desde Xataka vemos meridiano que los vencedores de la keynote de la WWDC 2023 van a ser los fabricantes de accesorios para iPhone.\n' +
+        '<!…',
+      url: 'https://www.xataka.com/perifericos/autenticos-ganadores-wwdc-fabricantes-accesorios-para-iphone',
+      urlToImage: 'https://i.blogs.es/043818/wwdc-iphone-standby/840_560.jpeg',
+      publishedAt: '2023-06-06T10:01:18Z',
+      content: 'Kent Brockman dijo que los auténticos ganadores de la partida de tenis en casa de los Simpson eran los aperitivos de Marge, y desde Xataka vemos meridiano que los vencedores de la keynote de la WWDC … [+2567 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Javier Marquez',
+      title: 'Por qué Unity Technologies se ha convertido en la gran ganadora tras el anuncio de las Apple Vision Pro',
+      description: 'Esta semana asistimos virtualmente a la presentación del que puede ser uno de los productos más importantes de Apple en años (con el paso del tiempo veremos si finalmente esto es así). Estamos hablando de las Vision Pro, unas gafas de realidad mixta que llega…',
+      url: 'https://www.xataka.com/realidad-virtual-aumentada/que-unity-technologies-se-ha-convertido-gran-ganadora-anuncio-apple-vision-pro',
+      urlToImage: 'https://i.blogs.es/f06e93/apple-vision-pro-unity-14/840_560.jpeg',
+      publishedAt: '2023-06-06T21:33:17Z',
+      content: 'Esta semana asistimos virtualmente a la presentación del que puede ser uno de los productos más importantes de Apple en años (con el paso del tiempo veremos si finalmente esto es así). Estamos hablan… [+3433 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Ricardo Aguilar',
+      title: 'Probamos iOS 17: el sistema del iPhone empieza a tocar techo. Y esto no es algo necesariamente negativo',
+      description: 'Ayer fue una jornada más que intensa a raíz de la WWDC de Apple. Apple presentó las Vision Pro, sus primeras gafas de realidad mixta. Junto a ellas, llegaron los MacBook Air con procesador M2, el M2 Ultra, así como las renovaciones en software: iPadOS 17, tvO…',
+      url: 'https://www.xataka.com/analisis/probamos-ios-17-sistema-iphone-empieza-a-tocar-techo-esto-no-algo-necesariamente-negativo',
+      urlToImage: 'https://i.blogs.es/5b870f/captura-de-pantalla-2023-06-06-a-las-13.30.31-p.-m./840_560.jpeg',
+      publishedAt: '2023-06-06T12:01:20Z',
+      content: 'Ayer fue una jornada más que intensa a raíz de la WWDC de Apple. Apple presentó las Vision Pro, sus primeras gafas de realidad mixta. Junto a ellas, llegaron los MacBook Air con procesador M2, el M2 … [+7219 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Javier Lacort',
+      title: 'Las Apple Vision Pro son el Tesla Roadster. Va a hacer falta tiempo para que llegue nuestro Model 3',
+      description: 'Apple suele caminar despacio. No se deja llevar por el hype porque prefiere imponer el suyo. En estos años no ha lanzado teléfonos plegables ni ha preparado nada para el metaverso. Ni siquiera en la presentación de ayer dijo las palabras "Inteligencia Artific…',
+      url: 'https://www.xataka.com/realidad-virtual-aumentada/apple-vision-pro-tesla-roadster-va-a-hacer-falta-tiempo-llegue-nuestro-model-3',
+      urlToImage: 'https://i.blogs.es/b7f778/roadster/840_560.jpeg',
+      publishedAt: '2023-06-06T07:31:18Z',
+      content: 'Apple suele caminar despacio. No se deja llevar por el hype porque prefiere imponer el suyo. En estos años no ha lanzado teléfonos plegables ni ha preparado nada para el metaverso. Ni siquiera en la … [+3924 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Manu García (Visnuh)',
+      title: 'Ahorra hasta un 40% en tu cuota alquilando tecnología en la Semana de la Suerte de Grover',
+      description: 'Si eres más de alquilar que de comprar, o eres de los que prefieren estar siempre a la última en tecnología, sin atarte demasiado tiempo al mismo dispositivo y además, tu conciencia te dicta que siempre es mejor que los gadgets que dejas atrás tengan una buen…',
+      url: 'https://www.xataka.com/seleccion/ahorra-40-tu-cuota-alquilando-tecnologia-semana-suerte-grover',
+      urlToImage: 'https://i.blogs.es/f6d433/grover/840_560.jpeg',
+      publishedAt: '2023-06-06T08:01:18Z',
+      content: 'Si eres más de alquilar que de comprar, o eres de los que prefieren estar siempre a la última en tecnología, sin atarte demasiado tiempo al mismo dispositivo y además, tu conciencia te dicta que siem… [+6194 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Max Zahn',
+      title: "Apple CEO Tim Cook says Vision Pro is 'tomorrow's engineering, today': Exclusive",
+      description: 'Cook also called on tech companies to self-regulate as they develop AI.',
+      url: 'https://abcnews.go.com/Technology/apple-ceo-tim-cook-vision-pro-gma-exclusive/story?id=99850800',
+      urlToImage: 'https://s.abcnews.com/images/US/tim-cook-2-abc-gmh-230605_1685998661921_hpMain_16x9_992.jpg',
+      publishedAt: '2023-06-06T12:04:17Z',
+      content: `Apple CEO Tim Cook said in an exclusive interview with "Good Morning America" on Tuesday that the company's first-ever spatial computer, the Apple Vision Pro, is the "most advanced piece of electroni… [+3262 chars]`
+    },
+    {
+      source: [Object],
+      author: 'Kurt Knutsson, CyberGuy Report',
+      title: '8 new Apple innovations unveiled at WWDC23',
+      description: 'The Apple Worldwide Developers Conference introduced several products, including new VR goggles, Apple watches, Mac computers and more. Here are the highlights.',
+      url: 'https://www.foxnews.com/tech/8-new-apple-innovations-unveiled-wwdc23',
+      urlToImage: 'https://static.foxnews.com/foxnews.com/content/uploads/2023/06/1-VISION-PRO.jpg',
+      publishedAt: '2023-06-06T18:33:11Z',
+      content: 'The 2023 Apple Worldwide Developers Conference kicked off on June 5, and its safe to say this was one of its biggest events yet. The tech giant introduced updates to iOS devices and new product launc… [+10412 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Jacob Roach',
+      title: 'Apple CEO says he uses ChatGPT weeks after Apple banned it',
+      description: "With no AI announcements at WWDC 2023, Apple's CEO finally broke silence on ChatGPT in an interview following the keynote.",
+      url: 'https://www.digitaltrends.com/computing/apple-ceo-chatgpt-interview/',
+      urlToImage: 'https://www.digitaltrends.com/wp-content/uploads/2022/06/tim-cook-wwdc-2022-screenshot.jpg?resize=1200%2C630&p=1',
+      publishedAt: '2023-06-06T15:42:57Z',
+      content: 'Apple had one of its largest WWDC keynotes in recent memory this year, with monumental announcements like the new Vision Pro headset. But one area where Apple was shockingly silent was AI, especially… [+2582 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Andy Boxall',
+      title: 'This one, crucial thing will make or break the Apple Vision Pro',
+      description: 'If Apple really wants the Vision Pro headset to succeed, it needs to think really seriously about how people who wear glasses use it.',
+      url: 'https://www.digitaltrends.com/mobile/apple-vision-pro-headset-needs-one-crucial-thing-glasses-wearers/',
+      urlToImage: 'https://www.digitaltrends.com/wp-content/uploads/2023/06/Apple-Vision-Pro-from-the-side.jpg?resize=1200%2C630&p=1',
+      publishedAt: '2023-06-06T16:30:21Z',
+      content: 'Apple\r\n' +
+        'I’m hugely excited about the Apple Vision Pro, but I’m also aware of how much of a risk it is. Not because it’s a hugely expensive VR headset — but because I wear spectacles to correct my visi… [+7926 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Jacob Roach',
+      title: 'You can make the Apple Vision Pro even more expensive with a luxury leather headband',
+      description: "Apple's Vision Pro is already insanely expensive, but luxury accessory brands are already jumping on the train with premium ways to trick out the headset.",
+      url: 'https://www.digitaltrends.com/computing/apple-vision-pro-leather-headband/',
+      urlToImage: 'https://www.digitaltrends.com/wp-content/uploads/2023/06/bandwerk-vision-pro-orange.jpg?resize=1200%2C630&p=1',
+      publishedAt: '2023-06-06T15:03:23Z',
+      content: 'Bandwerk\r\n' +
+        'A new Apple product means one thing: accessories. Despite the fact that Apple’s Vision Pro headset isn’t coming out until early next year, we’re already seeing third-party accessories for t… [+1997 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Damon Beres',
+      title: 'All Screens or No Screens?',
+      description: 'Two possible post-smartphone futures',
+      url: 'https://www.theatlantic.com/newsletters/archive/2023/06/apple-ai-screens-smartphones/674312/?utm_source=feed',
+      urlToImage: null,
+      publishedAt: '2023-06-06T22:52:00Z',
+      content: 'This is an edition of The Atlantic Daily, a newsletter that guides you through the biggest stories of the day, helps you discover new ideas, and recommends the best in culture. Sign up for it here.Ap… [+8316 chars]'
+    },
+    {
+      source: [Object],
+      author: 'Ian Bogost',
+      title: 'The Age of Goggles Has Arrived',
+      description: 'But why?',
+      url: 'https://www.theatlantic.com/technology/archive/2023/06/apple-vision-pro-ar-headset-metaverse/674303/?utm_source=feed',
+      urlToImage: null,
+      publishedAt: '2023-06-06T18:02:24Z',
+      content: '“Vision Pro feels familiar, yet it’s entirely new.” That’s how Apple’s CEO, Tim Cook, introduced the company’s new computer goggles at the Apple Worldwide Developers Conference on Monday. The Vision … [+16010 chars]'
+    },
+    {
+      source: [Object],
+      author: null,
+      title: 'OpenGL 3.1 on Asahi Linux',
+      description: 'Porting Linux to Apple Silicon',
+      url: 'https://asahilinux.org/2023/06/opengl-3-1-on-asahi-linux/',
+      urlToImage: 'https://asahilinux.org/img/AsahiLinux_logomark_256px.png',
+      publishedAt: '2023-06-06T13:46:13Z',
+      content: 'Upgrade your Asahi Linux systems, because your\r\n' +
+        'graphics drivers are getting a big boost: leapfrogging from OpenGL 2.1 over\r\n' +
+        'OpenGL 3.0 up to OpenGL 3.1! Similarly, the OpenGL ES 2.0 support is bumpi… [+10521 chars]'
+    }

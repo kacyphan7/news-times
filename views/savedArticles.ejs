@@ -8,10 +8,11 @@
                 <% savedArticles.forEach(article => { %>
                 <div class="card">
                     <div class="card-content">
+                        <p>Title: <%= article.title %></p>
+                        <p>Author: <%= article.author %></p>
+                        <p>Content: <%= article.content %></p>
+                        <p>Description: <%= article.description %></p>
                         <p>Published at: <%= article.publishedAt %></p>
-                        <hr>
-                        <!-- Debug output -->
-                        <pre><%= JSON.stringify(article, null, 2) %></pre>
                         <br>
                         <!-- Delete button -->
                         <form action="/savedArticles/delete/<%= article.id %>" method="POST">

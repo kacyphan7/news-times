@@ -71,7 +71,11 @@
                             <a href="<%= bitcoins.url %>" class="card-link">Read More</a>
                             <hr>
                             <form action="/savedArticles/add" method="POST">
-                                <input type="hidden" name="bitcoinsId" value="<%= bitcoins.id %>">
+                                <input type="hidden" name="title" value="<%= bitcoins.title %>">
+                                <input type="hidden" name="author" value="<%= bitcoins.author %>">
+                                <input type="hidden" name="content" value="<%= bitcoins.content %>">
+                                <input type="hidden" name="description" value="<%= bitcoins.description %>">
+                                <input type="hidden" name="publishedAt" value="<%= bitcoins.publishedAt %>">
                                 <button type="submit" class="button is-black">Save</button>
                             </form>
                         </div>

@@ -4,23 +4,21 @@ const axios = require('axios');
 module.exports = {
   async up(queryInterface, Sequelize) {
     try {
-      const response = await axios.get('http://localhost:3000/');
-      const articles = response.data.map(c => {
-        const result = {
-          author: c.author,
-          title: c.title,
-          urlToImage: c.urlToImage,
-          description: c.description,
-          url: c.url,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        };
-        return result;
-      });
+      const fakeArticles = [];
 
-      console.log('New articles', articles); // Array of articles
+      const article = {
+        title: 'Apple developer betas are now free to download and install',
+        author: 'Peter Cao',
+        content: 'Today, Apple updated its developer program to allow anyone access to the beta operating systems. ',
+        description: 'Today, Apple updated its developer program to allow anyone access to the beta operating systems.',
+        publishedAt: '2023-06-06T21:36:26Z',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      };
+      fakeArticles.push(article);
+      console.log('Fake articles', article); // Array of articles
 
-      await queryInterface.bulkInsert('articles', articles, {});
+      await queryInterface.bulkInsert('articles', fakeArticles, {});
     } catch (error) {
       console.error(error);
     }
