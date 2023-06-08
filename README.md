@@ -201,7 +201,6 @@ Wireframes for the News App have been created to visualize the app's design and 
 ![newsWireframe](public/assets/img/wireframe.png)
 
 # Future Enhancement
-- Show 1:M for saved list 
 - Update bio form & add functionality for upload images
 - Recraft model to show images and url link in saved list 
 - Share with friends 
