@@ -72,7 +72,7 @@ Run `sequelize db:migrate:all` and sequelize `db:seed:all` to setup database.
 
 ![editProfile](public/assets/img/editProfile.png)
 
-### Moblie Viiew
+### Moblie View
 
 ![moblieView](public/assets/img/moblieView.png)
 
