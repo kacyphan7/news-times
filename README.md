@@ -211,6 +211,9 @@ Wireframes for the News App have been created to visualize the app's design and 
 - Restyle to articles layout with limited articles per page  
 - Update footer 
 
+# ATTRIBUTION
+News Api: https://newsapi.org/
+
 # LICENSE 
 
 The source code for the site is licensed under the MIT license, which you can find in the MIT-LICENSE.txt file.
