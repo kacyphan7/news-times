@@ -13,9 +13,7 @@ The app is deployed on ______.
 ![Bulma](https://img.shields.io/badge/Bulma-00D1B2?style=for-the-badge&logo=Bulma&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 ![NODE.JS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
@@ -28,8 +26,7 @@ Setup requirements:
 1. `Fork` and `Clone` this respository to your local machine
 2. Run `npm install` to install dependencies.
 3. Run `npm run dev` or `npm start` to start server.
-4. Open `index.html` in your browser to view
-5. Open `http://localhost:3000` the web browser. 
+4. Open `http://localhost:3000` the web browser. 
 
 To access and view database: 
 Run `sequelize db:migrate:all` and sequelize `db:seed:all` to setup database.
@@ -205,6 +202,7 @@ Wireframes for the News App have been created to visualize the app's design and 
 
 # Future Enhancement
 - Show 1:M for saved list 
+- Update bio form & add functionality for upload images
 - Recraft model to show images and url link in saved list 
 - Share with friends 
 - Add Hamburger Menu
