@@ -4,7 +4,7 @@
 
 In today's fast-paced world, staying informed is crucial. Don't miss out on important updates and breaking news that could impact your life and business. With our comprehensive coverage of local and global news, you'll have access to a wide range of topics, including politics, business, technology, entertainment, and more.
 
-News Times is a web application that allows users to browse and read news articles from a variety of sources. The app provides features such as article browsing, full-text reading, and saving articles for later. The app implements essential functionality related to its goal.The app includes a GET, POST, 3 DELETE, and 3 PUT routes. The app utilizes the News API from Google and implements advanced database relationships.
+News Times is a web application that allows users to browse and read news articles from a variety of sources. The app provides features such as article browsing, full-text reading, and saving articles for later. The app implements essential functionality related to its goal. The app includes a GET, POST, DELETE, and PUT routes. The app utilizes the News API from Google and implements advanced database relationships.
 
 The app is deployed on ______.
 
@@ -22,10 +22,17 @@ The app is deployed on ______.
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
 
 # How To Install
+Setup requirements: 
+`Node.js`, `Postgres`, `Sequelize` 
 
 1. `Fork` and `Clone` this respository to your local machine
-2. Open `index.html` in your browser to view
-3. Open the directory in your `text editor` of choice to `view` or `edit` the code
+2. Run `npm install` to install dependencies.
+3. Run `npm run dev` or `npm start` to start server.
+4. Open `index.html` in your browser to view
+5. Open `http://localhost:3000` the web browser. 
+
+To access and view database: 
+Run `sequelize db:migrate:all` and sequelize `db:seed:all` to setup database.
 
 # How To Use
 
@@ -197,10 +204,12 @@ Wireframes for the News App have been created to visualize the app's design and 
 ![newsWireframe](public/assets/img/wireframe.png)
 
 # Future Enhancement
-- Implement WebSocket so that it can be used to store data from an API and retrieve it from local database 
+- Show 1:M for saved list 
+- Recraft model to show images and url link in saved list 
 - Share with friends 
 - Add Hamburger Menu
 - Restyle to articles layout with limited articles per page  
+- Update footer 
 
 # LICENSE 
 
