@@ -211,6 +211,7 @@ Wireframes for the News App have been created to visualize the app's design and 
 
 # ATTRIBUTION
 News Api: https://newsapi.org/
+
 Tools use to create logo: https://www.canva.com/
 
 # LICENSE 
