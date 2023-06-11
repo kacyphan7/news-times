@@ -6,7 +6,7 @@ In today's fast-paced world, staying informed is crucial. Don't miss out on impo
 
 News Times is a web application that allows users to browse and read news articles from a variety of sources. The app provides features such as article browsing, full-text reading, and saving articles for later. The app implements essential functionality related to its goal. The app includes a GET, POST, DELETE, and PUT routes. The app utilizes the News API from Google and implements advanced database relationships.
 
-The app is deployed on ______.
+The app is deployed on https://news-times.herokuapp.com/.
 
 # Languages, Frameworks, & Libraries Used:
 
